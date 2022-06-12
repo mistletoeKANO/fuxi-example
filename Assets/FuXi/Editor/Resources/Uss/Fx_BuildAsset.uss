@@ -1,0 +1,11 @@
+.fx-buildAsset-root{
+    padding: 3px 2px 2px 2px;
+}
+
+.fx-buildAsset-main{
+    flex-grow: 1;
+}
+
+.fx-buildAsset-foot{
+    margin-top: 4px;
+}

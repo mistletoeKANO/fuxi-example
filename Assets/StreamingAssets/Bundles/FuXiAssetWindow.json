@@ -1,0 +1,2682 @@
+{
+    "ResVersion": 2,
+    "AppVersion": "1.0",
+    "EncryptType": "FuXi.FxEncryptOffset",
+    "Assets": [
+        {
+            "Path": "Assets/Example/BundleResource/Audios/bgm_Battle.ogg",
+            "IsRawFile": true,
+            "HoldBundle": 0,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Audios/bgm_Home.ogg",
+            "IsRawFile": true,
+            "HoldBundle": 1,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Audios/encryptTest.json",
+            "IsRawFile": true,
+            "HoldBundle": 2,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Audios/SFX_Button_Click.mp3",
+            "IsRawFile": true,
+            "HoldBundle": 3,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Fonts/BattleFlyTextOne SDF.asset",
+            "IsRawFile": false,
+            "HoldBundle": 4,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Fonts/BattleFontSDF.asset",
+            "IsRawFile": false,
+            "HoldBundle": 5,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Fonts/currency.asset",
+            "IsRawFile": false,
+            "HoldBundle": 6,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Fonts/IconResource.asset",
+            "IsRawFile": false,
+            "HoldBundle": 7,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Fonts/TitleSDF.asset",
+            "IsRawFile": false,
+            "HoldBundle": 8,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Fonts/TitleSDF.mat",
+            "IsRawFile": false,
+            "HoldBundle": 9,
+            "DependBundles": [
+                8
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Fonts/WenQuanYi Micro Hei Mono SDF.asset",
+            "IsRawFile": false,
+            "HoldBundle": 10,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Fonts/WenQuanYi Micro Hei Mono SDF.mat",
+            "IsRawFile": false,
+            "HoldBundle": 11,
+            "DependBundles": [
+                10
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Materials/Sphere.mat",
+            "IsRawFile": false,
+            "HoldBundle": 12,
+            "DependBundles": [
+                47
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/Circle/Capsule.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 13,
+            "DependBundles": [
+                14
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/Circle/Cylinder.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 14,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/Game/UIRoot.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 15,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/Cube.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 16,
+            "DependBundles": [
+                13,
+                14
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/Form/CheckUpdateForm.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 17,
+            "DependBundles": [
+                30
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/Form/TestForm1.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 18,
+            "DependBundles": [
+                29,
+                45
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/Item/CircularDependenciesA1.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 19,
+            "DependBundles": [
+                20,
+                40
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/Item/CircularDependenciesA2.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 20,
+            "DependBundles": [
+                19,
+                40
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/Item/CircularDependenciesOne.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 21,
+            "DependBundles": [
+                44
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/Item/CircularDependenciesThree.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 22,
+            "DependBundles": [
+                21,
+                44
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/Item/CircularDependenciesTwo.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 23,
+            "DependBundles": [
+                21,
+                22,
+                44
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/Item/TestItem1.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 24,
+            "DependBundles": [
+                45
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Prefabs/UI/TouchMoveGame.prefab",
+            "IsRawFile": false,
+            "HoldBundle": 25,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Scenes/Battle.unity",
+            "IsRawFile": false,
+            "HoldBundle": 26,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Scenes/CheckUpdate.unity",
+            "IsRawFile": false,
+            "HoldBundle": 27,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Scenes/MainHome.unity",
+            "IsRawFile": false,
+            "HoldBundle": 28,
+            "DependBundles": [
+                18,
+                29,
+                45
+            ]
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Bg/Bg_Black.png",
+            "IsRawFile": false,
+            "HoldBundle": 29,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Bg/Bg_Equip.png",
+            "IsRawFile": false,
+            "HoldBundle": 29,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Bg/Bg_Map.png",
+            "IsRawFile": false,
+            "HoldBundle": 29,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Bg/Bg_Shop.png",
+            "IsRawFile": false,
+            "HoldBundle": 29,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Bg/Bg_Shop2.png",
+            "IsRawFile": false,
+            "HoldBundle": 29,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Bg/Bg_Task.png",
+            "IsRawFile": false,
+            "HoldBundle": 29,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Common/SliderHandle.png",
+            "IsRawFile": false,
+            "HoldBundle": 30,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesBig/Icon_Accessories1_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 31,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesBig/Icon_Accessories2_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 31,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesBig/Icon_Accessories3_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 31,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesBig/Icon_Accessories4_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 31,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesBig/Icon_Accessories5_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 31,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesBig/Icon_Battery1_1_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 31,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesBig/Icon_Battery1_2_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 31,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesBig/Icon_Battery1_3_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 31,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesBig/Icon_Battery1_4_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 31,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Frame_Accessories1.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Frame_Accessories2.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Frame_Accessories3.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Frame_Accessories4.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Frame_Accessories5.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Accessories1.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Accessories2.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Accessories3.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Accessories4.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Accessories5.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Battery1_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Battery1_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Battery1_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Battery1_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Manufacturer_Example1.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AccessoriesIcon/Icon_Manufacturer_Example2.png",
+            "IsRawFile": false,
+            "HoldBundle": 32,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_6.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_7.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_8.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_9.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_10.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_11.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Advanced_Example_12.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/AdvancedIcon/Icon_Choose.png",
+            "IsRawFile": false,
+            "HoldBundle": 33,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipBig/Icon_Chip_Example01_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 34,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipBig/Icon_Chip_Example02_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 34,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipBig/Icon_Chip_Example03_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 34,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipBig/Icon_Chip_Example11_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 34,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipBig/Icon_Chip_Example12_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 34,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipBig/Icon_Chip_Example13_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 34,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipIcon/Icon_Chip_Example01.png",
+            "IsRawFile": false,
+            "HoldBundle": 35,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipIcon/Icon_Chip_Example02.png",
+            "IsRawFile": false,
+            "HoldBundle": 35,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipIcon/Icon_Chip_Example03.png",
+            "IsRawFile": false,
+            "HoldBundle": 35,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipIcon/Icon_Chip_Example11.png",
+            "IsRawFile": false,
+            "HoldBundle": 35,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipIcon/Icon_Chip_Example12.png",
+            "IsRawFile": false,
+            "HoldBundle": 35,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ChipIcon/Icon_Chip_Example13.png",
+            "IsRawFile": false,
+            "HoldBundle": 35,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/AccessoriesType1.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/AccessoriesType2.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/AccessoriesType3.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/AccessoriesType4.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/AccessoriesType5.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/AccessoriesType_Battery1.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/AccessoriesType_Battery2.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/AccessoriesType_Battery3.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/AccessoriesType_Battery4.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/Icon_Locking.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/Icon_NotLocked.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Common/Icon_NotUnlock.png",
+            "IsRawFile": false,
+            "HoldBundle": 36,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/CurrencyIcon/Currency_Coin.png",
+            "IsRawFile": false,
+            "HoldBundle": 37,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/CurrencyIcon/Currency_EquipExp.png",
+            "IsRawFile": false,
+            "HoldBundle": 37,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/CurrencyIcon/Currency_Gems.png",
+            "IsRawFile": false,
+            "HoldBundle": 37,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/CurrencyIcon/Currency_RoleExp.png",
+            "IsRawFile": false,
+            "HoldBundle": 37,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/CurrencyIcon/Currency_TechPoint.png",
+            "IsRawFile": false,
+            "HoldBundle": 37,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipBig/Icon_Arm_Example_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 38,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipBig/Icon_Body_Example1_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 38,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipBig/Icon_Body_Example2_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 38,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipBig/Icon_Feet_Example_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 38,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipBig/Icon_Head_Example_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 38,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipBig/Icon_Leg_Example_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 38,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery1_0.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery1_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery1_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery1_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery1_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery1_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery2_0.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery2_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery2_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery2_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery2_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery2_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery3_0.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery3_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery3_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery3_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery3_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery3_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery4_0.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery4_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery4_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery4_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery4_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Battery4_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type1_0.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type1_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type1_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type1_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type1_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type1_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type2_0.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type2_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type2_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type2_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type2_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type2_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type3_0.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type3_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type3_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type3_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type3_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type3_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type4_0.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type4_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type4_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type4_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type4_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type4_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type5_0.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type5_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type5_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type5_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type5_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/equipAsc_Type5_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/EquipPositionSelect.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQuality.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQuality1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQuality2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQuality3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQuality4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQuality5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQualitySmall1.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQualitySmall2.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQualitySmall3.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQualitySmall4.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipQualitySmall5.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Frame_EquipSmallBg.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Icon_EnergyConsumption.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipFeatures/Icon_EnergySupply.png",
+            "IsRawFile": false,
+            "HoldBundle": 39,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipIcon/Icon_Arm_Example.png",
+            "IsRawFile": false,
+            "HoldBundle": 40,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipIcon/Icon_Body_Example1.png",
+            "IsRawFile": false,
+            "HoldBundle": 40,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipIcon/Icon_Body_Example2.png",
+            "IsRawFile": false,
+            "HoldBundle": 40,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipIcon/Icon_Feet_Example.png",
+            "IsRawFile": false,
+            "HoldBundle": 40,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipIcon/Icon_Head_Example.png",
+            "IsRawFile": false,
+            "HoldBundle": 40,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EquipIcon/Icon_Leg_Example.png",
+            "IsRawFile": false,
+            "HoldBundle": 40,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EventItem/Plunder_Prop_Icon.png",
+            "IsRawFile": false,
+            "HoldBundle": 41,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/EventItem/Prop_Icon.png",
+            "IsRawFile": false,
+            "HoldBundle": 41,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_DiyTech_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_1_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_2_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_3_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_4_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_5_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_6_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_11_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_12_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_13_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_14_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_21_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_22_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_23_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_24_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Drawing_25_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_EmptyChip_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item1_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item2_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item3_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item4_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item5_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_1A_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_1B_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_1C_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_1D_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_2A_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_2B_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_2C_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_2D_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_3A_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_3B_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_3C_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_3D_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_4A_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_4B_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_4C_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Item_Example_4D_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Piece_ABlueBlue_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Piece_Apeng_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Piece_Aska_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Piece_Graffiti_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Piece_HaoJJ_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Piece_Maksim_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemBig/Icon_Piece_RubyRose_L.png",
+            "IsRawFile": false,
+            "HoldBundle": 42,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Frame_Item1.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Frame_Item2.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Frame_Item3.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Frame_Item4.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Frame_Item5.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Currency_Coin.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Currency_EquipExp.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Currency_Gems.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Currency_RoleExp.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Currency_TechPoint.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Currency_Temporary1.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Currency_Temporary2.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_DiyTech.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_5.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_6.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_11.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_12.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_13.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_14.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_21.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_22.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_23.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_24.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Drawing_25.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_EmptyChip.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item1.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item2.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item3.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item4.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item5.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_1A.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_1B.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_1C.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_1D.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_2A.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_2B.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_2C.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_2D.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_3A.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_3B.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_3C.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_3D.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_4A.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_4B.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_4C.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Example_4D.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Item_Piece.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Piece_ABlueBlue.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Piece_Apeng.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Piece_Aska.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Piece_Graffiti.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Piece_HaoJJ.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Piece_Maksim.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/Icon_Piece_RubyRose.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ItemIcon/ItemSelect.png",
+            "IsRawFile": false,
+            "HoldBundle": 43,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_bar.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Battle.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Combat.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Equip.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Hospital.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_MainlineQuest.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Net.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Poison.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Radiation.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Search.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Shop.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_SideQuest.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Store.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/Event_Upload.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/MapEvent/RoleSign.png",
+            "IsRawFile": false,
+            "HoldBundle": 44,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Profession/Icon_Profession_1.png",
+            "IsRawFile": false,
+            "HoldBundle": 45,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Profession/Icon_Profession_2.png",
+            "IsRawFile": false,
+            "HoldBundle": 45,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Profession/Icon_Profession_3.png",
+            "IsRawFile": false,
+            "HoldBundle": 45,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/Profession/Icon_Profession_4.png",
+            "IsRawFile": false,
+            "HoldBundle": 45,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ResourceIcon/Icon_Commodity1.png",
+            "IsRawFile": false,
+            "HoldBundle": 46,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ResourceIcon/Icon_Commodity2.png",
+            "IsRawFile": false,
+            "HoldBundle": 46,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ResourceIcon/Icon_Commodity4.png",
+            "IsRawFile": false,
+            "HoldBundle": 46,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/ResourceIcon/Icon_Commodity5.png",
+            "IsRawFile": false,
+            "HoldBundle": 46,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_ABlueBlue01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_ABlueBlue02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_ABlueBlue03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_ABlueBlue04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_ABlueBlueCopy01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_ABlueBlueCopy02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_ABlueBlueCopy03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_ABlueBlueCopy04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_Aska01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_Aska02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_Aska03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_Aska04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_BossMonster01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_BossMonster02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_BossMonster03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_BossMonster04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_CaptainMonster01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_CaptainMonster02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_CaptainMonster03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_CaptainMonster04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_HaoJJ01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_HaoJJ02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_HaoJJ03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_HaoJJ04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_HaoJJCopy01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_HaoJJCopy02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_HaoJJCopy03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_HaoJJCopy04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_LittleMonsterRope01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_LittleMonsterRope02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_LittleMonsterRope03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_LittleMonsterRope04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_LittleMonsterScapula01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_LittleMonsterScapula02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_LittleMonsterScapula03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_LittleMonsterScapula04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_Maksim01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_Maksim02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_Maksim03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_Maksim04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_MaksimCopy01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_MaksimCopy02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_MaksimCopy03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_MaksimCopy04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_RubyRose01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_RubyRose02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_RubyRose03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_RubyRose04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_TypeArcher01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_TypeArcher02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_TypeArcher03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_TypeArcher04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_TypeIronHand01.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_TypeIronHand02.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_TypeIronHand03.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/SkillIcon/Icon_Skill_TypeIronHand04.png",
+            "IsRawFile": false,
+            "HoldBundle": 47,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/TechCommon/Img_Number1.png",
+            "IsRawFile": false,
+            "HoldBundle": 48,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/TechCommon/Img_Number2.png",
+            "IsRawFile": false,
+            "HoldBundle": 48,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/TechCommon/Img_Number3.png",
+            "IsRawFile": false,
+            "HoldBundle": 48,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/TechIcon/Tech_Example1.png",
+            "IsRawFile": false,
+            "HoldBundle": 49,
+            "DependBundles": []
+        },
+        {
+            "Path": "Assets/Example/BundleResource/Sprites/Icon/TechIcon/Tech_Example2.png",
+            "IsRawFile": false,
+            "HoldBundle": 49,
+            "DependBundles": []
+        }
+    ],
+    "Bundles": [
+        {
+            "BundleHashName": "audios_bgm_battle_7a3954c2d79c190c3fc60e128650fa00_raw.ddd",
+            "CRC": "ee34cf84",
+            "Hash": "06d434241a7462d3fd8bbca42888d0f7",
+            "IsBuiltin": false,
+            "Size": 1196812
+        },
+        {
+            "BundleHashName": "audios_bgm_home_19975910ae17b8fce0a9766254fed354_raw.ddd",
+            "CRC": "c8869313",
+            "Hash": "7002136a187a119c66fba93c5322bce9",
+            "IsBuiltin": false,
+            "Size": 2752516
+        },
+        {
+            "BundleHashName": "audios_encrypttest_39ab85c4ce88da6ba05c7c494f659ef2_raw.ddd",
+            "CRC": "ff8fb8a5",
+            "Hash": "d5bf33a8053271beec3722474543e5ab",
+            "IsBuiltin": false,
+            "Size": 76
+        },
+        {
+            "BundleHashName": "audios_sfx_button_click_5d580176c2c5e35e8d145636165ee728_raw.ddd",
+            "CRC": "7828c1d0",
+            "Hash": "ca40d626cfe4757fab59c695ff14e749",
+            "IsBuiltin": false,
+            "Size": 13188
+        },
+        {
+            "BundleHashName": "fonts_battleflytextone_sdf_asset_ebfa2be950717bfb8a510e41aba333ee.ddd",
+            "CRC": "c885804d",
+            "Hash": "0089c20298d7f933f29d3848c9e256eb",
+            "IsBuiltin": false,
+            "Size": 49641
+        },
+        {
+            "BundleHashName": "fonts_battlefontsdf_asset_4ca01155ec2c5677f93182509301ca61.ddd",
+            "CRC": "14d615c1",
+            "Hash": "af7d9145ba7c3619e56400478664f6e5",
+            "IsBuiltin": false,
+            "Size": 48281
+        },
+        {
+            "BundleHashName": "fonts_currency_asset_b08394af1591e4da01acd359d065155d.ddd",
+            "CRC": "47b8dca2",
+            "Hash": "4a2bdd4de59546abe0884312bd73abf0",
+            "IsBuiltin": false,
+            "Size": 37208
+        },
+        {
+            "BundleHashName": "fonts_iconresource_asset_ab801695cd5672ed9452fd0bfb1f94fa.ddd",
+            "CRC": "1af5b2da",
+            "Hash": "a542baf78f973c1c17b837d9014c1cc2",
+            "IsBuiltin": false,
+            "Size": 200997
+        },
+        {
+            "BundleHashName": "fonts_titlesdf_asset_5091f887c123e53fed81bab659e01844.ddd",
+            "CRC": "d37e5506",
+            "Hash": "a011d184cebb6b5da37c7158453dab5f",
+            "IsBuiltin": false,
+            "Size": 2271684
+        },
+        {
+            "BundleHashName": "fonts_titlesdf_mat_7a1c6a69ad6f03b631b665682fe4faa6.ddd",
+            "CRC": "1325c9b2",
+            "Hash": "b85184ebf357eb3c21b03effee26fe2d",
+            "IsBuiltin": false,
+            "Size": 23594
+        },
+        {
+            "BundleHashName": "fonts_wenquanyi_micro_hei_mono_sdf_asset_cd92282f61333754d3ee41710be22093.ddd",
+            "CRC": "81104d78",
+            "Hash": "63e105787cb01dca97acd265dc317bee",
+            "IsBuiltin": false,
+            "Size": 8451803
+        },
+        {
+            "BundleHashName": "fonts_wenquanyi_micro_hei_mono_sdf_mat_86f9f47f9efdab124f4eb6dd5a5f74d6.ddd",
+            "CRC": "b8267623",
+            "Hash": "7077907c5722f9e7d1d86c90e10eff3a",
+            "IsBuiltin": false,
+            "Size": 23678
+        },
+        {
+            "BundleHashName": "materials_bf9a8bd38324922499ab915dec15711a.ddd",
+            "CRC": "ecd8661e",
+            "Hash": "b08c0095803c0d09419202f3b7d7d4a2",
+            "IsBuiltin": false,
+            "Size": 35172
+        },
+        {
+            "BundleHashName": "prefabs_circle_capsule_prefab_f5932620a9c5760415c65bcbbcf4a289.ddd",
+            "CRC": "1addb511",
+            "Hash": "b0e43f0f30f7956ebea79395497f331f",
+            "IsBuiltin": false,
+            "Size": 42480
+        },
+        {
+            "BundleHashName": "prefabs_circle_cylinder_prefab_31b21f175e0c943417834beb9173ad1b.ddd",
+            "CRC": "9a9fc237",
+            "Hash": "fe176aa560cb8fc961efc1149320d1aa",
+            "IsBuiltin": false,
+            "Size": 41720
+        },
+        {
+            "BundleHashName": "prefabs_game_uiroot_prefab_60e06bb8073f19c8f37ab5eb507ed6fc.ddd",
+            "CRC": "ef2cc936",
+            "Hash": "50ee024d29336fc34c0df7d7dbfe97fc",
+            "IsBuiltin": false,
+            "Size": 5969
+        },
+        {
+            "BundleHashName": "prefabs_ui_cube_prefab_b9baa586b86a401918db855c43e185a3.ddd",
+            "CRC": "970ba73a",
+            "Hash": "31b215fe9fc249af7e5e25eaa8df4f49",
+            "IsBuiltin": false,
+            "Size": 56516
+        },
+        {
+            "BundleHashName": "prefabs_ui_form_checkupdateform_prefab_8b972a70444df3783694702f41dc4bc8.ddd",
+            "CRC": "e62b3895",
+            "Hash": "1fc1cc8a74d1e430b8e8f6c4bf0c32ee",
+            "IsBuiltin": false,
+            "Size": 620414
+        },
+        {
+            "BundleHashName": "prefabs_ui_form_testform1_prefab_185ef257a6e96a88583ddbb396743933.ddd",
+            "CRC": "52a9c2aa",
+            "Hash": "f2b28a02afffc6c388477ac3d2aaf1bb",
+            "IsBuiltin": true,
+            "Size": 13161
+        },
+        {
+            "BundleHashName": "prefabs_ui_item_circulardependenciesa1_prefab_21652e1cd1878bc0cf3e175f874f7c54.ddd",
+            "CRC": "7c86c3b5",
+            "Hash": "fd912decf5a49c90b6b3487b037c30a5",
+            "IsBuiltin": false,
+            "Size": 4006
+        },
+        {
+            "BundleHashName": "prefabs_ui_item_circulardependenciesa2_prefab_cd0d09bbd44d7f33582c239d7250232c.ddd",
+            "CRC": "f9a34e4d",
+            "Hash": "bf57c1ce1a082e87e404f21c8b39acb0",
+            "IsBuiltin": false,
+            "Size": 3992
+        },
+        {
+            "BundleHashName": "prefabs_ui_item_circulardependenciesone_prefab_ed137eb44d48b918c2619f322d6d1242.ddd",
+            "CRC": "53f596c2",
+            "Hash": "a27f14028c62e477a2140a87ddfa8c73",
+            "IsBuiltin": false,
+            "Size": 3948
+        },
+        {
+            "BundleHashName": "prefabs_ui_item_circulardependenciesthree_prefab_0767b5411c00595f1bf66e9d011cbe77.ddd",
+            "CRC": "26663d38",
+            "Hash": "3f5b5903e0506cb041f8532fde828b62",
+            "IsBuiltin": false,
+            "Size": 4000
+        },
+        {
+            "BundleHashName": "prefabs_ui_item_circulardependenciestwo_prefab_5f7f0a58cde8f513c79030af1ce9265b.ddd",
+            "CRC": "58436957",
+            "Hash": "5423c3bd5b39cf1cfe8fd65d7367a8ee",
+            "IsBuiltin": false,
+            "Size": 4009
+        },
+        {
+            "BundleHashName": "prefabs_ui_item_testitem1_prefab_63c0123113931dea15196d4b62842080.ddd",
+            "CRC": "50059c56",
+            "Hash": "569ac0e0018a2b2201a3d217f34986a2",
+            "IsBuiltin": false,
+            "Size": 6816
+        },
+        {
+            "BundleHashName": "prefabs_ui_touchmovegame_prefab_d030f3f1bf3e0741cda5f273583cf6f9.ddd",
+            "CRC": "cafe9f80",
+            "Hash": "6f94cf23cf67730c897aa936431cfa63",
+            "IsBuiltin": false,
+            "Size": 10506
+        },
+        {
+            "BundleHashName": "scenes_battle_unity_b93c0b2660a21518154a1c0d61c5cca4.ddd",
+            "CRC": "ce170c4f",
+            "Hash": "69736404ac5a04c1fefd01e6058f24a9",
+            "IsBuiltin": false,
+            "Size": 28388
+        },
+        {
+            "BundleHashName": "scenes_checkupdate_unity_62bf0e8cf2ea13312e704bad455a51a5.ddd",
+            "CRC": "90beab5e",
+            "Hash": "f65b62983299b89b470be280bb776da6",
+            "IsBuiltin": false,
+            "Size": 23699
+        },
+        {
+            "BundleHashName": "scenes_mainhome_unity_c2bb01dcd976a781ee8fde0b1383af79.ddd",
+            "CRC": "2431e000",
+            "Hash": "7e5c7915afe9f461b9193a12c75ec3be",
+            "IsBuiltin": true,
+            "Size": 37114
+        },
+        {
+            "BundleHashName": "sprites_bg_348049195ba6c5502847825178c34d99.ddd",
+            "CRC": "f56b8e00",
+            "Hash": "58d9e6a4e8a0e0cd80c07f63790e2035",
+            "IsBuiltin": true,
+            "Size": 2342594
+        },
+        {
+            "BundleHashName": "sprites_common_de543aba73e6505b15566381dbed01d9.ddd",
+            "CRC": "287c54e4",
+            "Hash": "c1169983c3409f2195cf3f2da34f5be6",
+            "IsBuiltin": false,
+            "Size": 5334
+        },
+        {
+            "BundleHashName": "sprites_icon_accessoriesbig_d6af6ffb15b64cbd5357ee40a75a0015.ddd",
+            "CRC": "37baf3ae",
+            "Hash": "52a54d2a6ec46f48dbec200dd0c62517",
+            "IsBuiltin": false,
+            "Size": 210147
+        },
+        {
+            "BundleHashName": "sprites_icon_accessoriesicon_4c1ae86f0392f3fcb2dcb9405b54942f.ddd",
+            "CRC": "d0e4fbdb",
+            "Hash": "3e117fdcf46ed168fbde89d745d69da6",
+            "IsBuiltin": false,
+            "Size": 51614
+        },
+        {
+            "BundleHashName": "sprites_icon_advancedicon_6fd997eda59fc38735d5bb71051942e8.ddd",
+            "CRC": "e66a65d8",
+            "Hash": "3418488921db05ef2c628355d3d7f4a9",
+            "IsBuiltin": false,
+            "Size": 303226
+        },
+        {
+            "BundleHashName": "sprites_icon_chipbig_af061a04be1ca976c22c6b13dd404add.ddd",
+            "CRC": "f4ca9669",
+            "Hash": "e9bc1e04587e57e19ad6ba317c659628",
+            "IsBuiltin": false,
+            "Size": 71941
+        },
+        {
+            "BundleHashName": "sprites_icon_chipicon_a7e52411e72a029187282b32340812c9.ddd",
+            "CRC": "354e165e",
+            "Hash": "f254a1819caaba3b88ae426aed614ab6",
+            "IsBuiltin": false,
+            "Size": 11665
+        },
+        {
+            "BundleHashName": "sprites_icon_common_04e3ba9588242f8ce165f7d669487eb3.ddd",
+            "CRC": "d8ca7a6b",
+            "Hash": "6b315b850e3aeb87e8b7f4865a6a9702",
+            "IsBuiltin": false,
+            "Size": 33918
+        },
+        {
+            "BundleHashName": "sprites_icon_currencyicon_de08bcf6ec89372780b35c855d43dc13.ddd",
+            "CRC": "506e416d",
+            "Hash": "947dead13bbafad16d03e062e66abd8c",
+            "IsBuiltin": false,
+            "Size": 12846
+        },
+        {
+            "BundleHashName": "sprites_icon_equipbig_6d1107097d6f73e3a89080e9006cd7bc.ddd",
+            "CRC": "584ec7e7",
+            "Hash": "6d8042724044680808f60b0544cc9602",
+            "IsBuiltin": false,
+            "Size": 128641
+        },
+        {
+            "BundleHashName": "sprites_icon_equipfeatures_739ed24db8c46a15f6614dccc5223efa.ddd",
+            "CRC": "c12b3155",
+            "Hash": "e470dbdd08c848a70b89a3fbe57fb71f",
+            "IsBuiltin": false,
+            "Size": 89903
+        },
+        {
+            "BundleHashName": "sprites_icon_equipicon_b83fe81ea78043b3791ec08a288c8d0f.ddd",
+            "CRC": "8e3622dc",
+            "Hash": "af54cad2dadc49d325c0d888eaff7edc",
+            "IsBuiltin": false,
+            "Size": 32517
+        },
+        {
+            "BundleHashName": "sprites_icon_eventitem_b882662446d290c5dd3d4441423616d8.ddd",
+            "CRC": "fb5d6125",
+            "Hash": "34c31d2f86000d932884c71f7ca5a96d",
+            "IsBuiltin": false,
+            "Size": 64880
+        },
+        {
+            "BundleHashName": "sprites_icon_itembig_85c5254a67ab0cbbef5468254015d12b.ddd",
+            "CRC": "484f36ae",
+            "Hash": "78bf62422fc40dfd9ae58b662eee56dc",
+            "IsBuiltin": false,
+            "Size": 942949
+        },
+        {
+            "BundleHashName": "sprites_icon_itemicon_ca56960b18a5a0cca16296c8d504f7cf.ddd",
+            "CRC": "06f3d9fa",
+            "Hash": "eaed2138df8f0e807435d84e6736fb50",
+            "IsBuiltin": false,
+            "Size": 218446
+        },
+        {
+            "BundleHashName": "sprites_icon_mapevent_12a802b7cac005d5802340aed17ca779.ddd",
+            "CRC": "fdf1805a",
+            "Hash": "94ceda7a2907c0ff5613825cebf76854",
+            "IsBuiltin": false,
+            "Size": 58234
+        },
+        {
+            "BundleHashName": "sprites_icon_profession_00bad4272f9f473e19dc8a2188226e60.ddd",
+            "CRC": "b8868754",
+            "Hash": "359305f3d5464698b63b6a6d38830103",
+            "IsBuiltin": true,
+            "Size": 9019
+        },
+        {
+            "BundleHashName": "sprites_icon_resourceicon_8e3b4ea09127b64b0cdcd18074339a09.ddd",
+            "CRC": "1ccec27d",
+            "Hash": "fc627b48617d3cf3c1f12ecd567788de",
+            "IsBuiltin": false,
+            "Size": 39342
+        },
+        {
+            "BundleHashName": "sprites_icon_skillicon_678d853815ac9baa60c3b462a0484dc9.ddd",
+            "CRC": "760947c4",
+            "Hash": "bd707fcce2304379f92954fad44b98f3",
+            "IsBuiltin": false,
+            "Size": 686655
+        },
+        {
+            "BundleHashName": "sprites_icon_techcommon_19466e2f8e150ee41c1706ed0cd757e8.ddd",
+            "CRC": "a089afa2",
+            "Hash": "18ece05067c9c26c85b094f4a2b7adf9",
+            "IsBuiltin": false,
+            "Size": 4436
+        },
+        {
+            "BundleHashName": "sprites_icon_techicon_b7c1fda54373e17f3d5447acb2e57e74.ddd",
+            "CRC": "166b75fc",
+            "Hash": "945636b54f2692033469f7da9c0ae853",
+            "IsBuiltin": false,
+            "Size": 8810
+        }
+    ],
+    "Packages": [
+        {
+            "PackageName": "Builtin",
+            "Bundles": [
+                28,
+                18,
+                29,
+                45
+            ]
+        },
+        {
+            "PackageName": "Level_One",
+            "Bundles": [
+                0,
+                3
+            ]
+        },
+        {
+            "PackageName": "Level_Two",
+            "Bundles": [
+                1,
+                28,
+                18,
+                29,
+                45,
+                16,
+                13,
+                14,
+                17,
+                30,
+                19,
+                20,
+                40,
+                21,
+                44,
+                22,
+                23,
+                24,
+                25
+            ]
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2842040801547594344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad09892500d426ebd9f5b7828bd24d2, type: 3}
+  m_Name: BuiltinPackage
+  m_EditorClassIdentifier: 
+  PackageObjects: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b6c21043e1445fbb62f910f69c62d4, type: 3}
+  m_Name: FuXi Asset Ios
+  m_EditorClassIdentifier: 
+  bundleVersion: 0
+  playerVersion: 0
+  buildAssetBundleOptions: 256
+  fx_Objects: []
+--- !u!114 &654999977308767811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bdac13526f41efa54d03db9847fe79, type: 3}
+  m_Name: Settings
+  m_EditorClassIdentifier: 
+  BundleRootPath: Assets/BundleResource/
+  ExtensionName: 
+  FxPlatform: 2
+  EncryptType: None
+  CopyAllBundle2Player: 0
+  ExcludeExtensions: []
+  BuiltinPackages: []
