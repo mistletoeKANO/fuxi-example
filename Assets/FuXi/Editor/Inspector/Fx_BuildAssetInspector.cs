@@ -121,10 +121,10 @@ namespace FuXi.Editor
         public override VisualElement CreateInspectorGUI()
         {
             this.m_Root = new VisualElement();
-            var main_style = Resources.Load<StyleSheet>(Fx_Style.Fx_BuildAsset_Uss);
-            if (main_style != null)
+            var mainStyle = Resources.Load<StyleSheet>(Fx_Style.Fx_BuildAsset_Uss);
+            if (mainStyle != null)
             {
-                this.m_Root.styleSheets.Add(main_style);
+                this.m_Root.styleSheets.Add(mainStyle);
             }
 
             this.m_Root.AddToClassList(Fx_Style.Fx_BuildAsset_Root_Class);
@@ -204,11 +204,12 @@ namespace FuXi.Editor
 
         private void CheckFxObjectList()
         {
-            var fx_obj = ((Fx_BuildAsset) this.target).fx_Objects;
+            var fxObj = ((Fx_BuildAsset) this.target).fx_Objects;
+            if (fxObj == null) return;
             string elements = String.Empty;
-            for (int i = 0; i < fx_obj.Count; i++)
+            for (int i = 0; i < fxObj.Count; i++)
             {
-                if (fx_obj[i].folder != null) continue;
+                if (fxObj[i].folder != null) continue;
                 elements = string.Concat(elements, $" {i}");
             }
             if (string.IsNullOrEmpty(elements)) return;

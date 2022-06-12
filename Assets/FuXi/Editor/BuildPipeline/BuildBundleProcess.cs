@@ -152,6 +152,7 @@ namespace FuXi.Editor
                     throw new Exception($"Bundle package name is repeated: {package.name}");
                 }
                 var bundlePackage = new BundlePackage() {PackageName = package.name, bundles = new List<string>()};
+                if (package.PackageObjects == null) continue;
                 int length = package.PackageObjects.Count;
                 for (int j = 0; j < length; j++)
                 {
