@@ -1,6 +1,6 @@
 # 伏羲 (FuXi) 
 
-[![License](https://img.shields.io/github/license/tuyoogame/YooAsset)](https://github.com/tuyoogame/YooAsset/blob/master/LICENSE)[![openupm](https://img.shields.io/npm/v/com.tuyoogame.yooasset?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.cn/packages/com.tuyoogame.yooasset/)
+[![License]([https://github.com/tuyoogame/YooAsset/blob/master/LICENSE](https://github.com/mistletoeKANO/fuxi-example/blob/main/LICENSE))[![openupm](https://img.shields.io/npm/v/com.tuyoogame.yooasset?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.cn/packages/com.tuyoogame.yooasset/)
 
 版本：1.0.0
 
