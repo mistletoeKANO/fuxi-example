@@ -5,7 +5,7 @@
 说明：AssetBundle 资源管理 和 加载 插件
 
 ## 功能 
-1.操作简单易上手, 单配置文件, 功能丰富
+1.操作简单易上手, 单配置文件, 方便管理
 
 2.AssetBundle打包, 自动分析, 零冗余
 
@@ -20,7 +20,7 @@
 ## 简单使用
 
 FxManager 全局管理器
-``
+````
 //启动 FuXi, 当前初始化方法 必须调用 **
 await FxManager.FxLauncherAsync(RuntimeMode);
 
@@ -33,14 +33,14 @@ await FxManager.FxCheckDownload(download, a =>
 {
     form.UpdateHandle(a,$"正在下载: {a}");
 });
-``
-``
+````
+````
 详细可查看 FxManager
 
 FxAsset 加载 资源
 FxScene 加载 场景
 FxRawAsset 加载原生文件
-``
+````
 
 ## 注意事项
 
