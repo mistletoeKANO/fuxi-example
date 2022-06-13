@@ -14,7 +14,7 @@ namespace FuXi
             Finished,
         }
         private readonly bool m_LoadImmediate;
-        private FxReference fxReference;
+        private readonly FxReference fxReference;
         
         private BundleLoader m_BundleLoader;
         private AssetBundleRequest m_BundleRequest;

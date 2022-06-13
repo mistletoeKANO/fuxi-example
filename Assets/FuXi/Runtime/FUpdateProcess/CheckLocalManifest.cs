@@ -65,6 +65,7 @@ namespace FuXi
                         FxManager.ManifestVC.OldManifest = new FxManifest();
                         FxManager.ManifestVC.NewManifest = new FxManifest();
                     }
+                    FxManager.ManifestVC.InitEncrypt();
                     tcs.SetResult(this);
                     this.isDone = true;
                     break;

@@ -10,14 +10,69 @@ namespace FuXi
     /// </summary>
     public static class FxManager
     {
-        internal static readonly FxManifestDriver ManifestVC = new FxManifestDriver("FuXiAssetWindow");
+        internal static FxManifestDriver ManifestVC;
         internal static System.Func<FxManifest> ParseManifestCallback;  // 用在Unity编辑器下初始化本地配置
         internal static RuntimeMode RuntimeMode = RuntimeMode.Editor;
-        internal static string PlatformURL => "http://192.168.31.111/Windows/";
+        internal static string PlatformURL;
         
-        // FuXi启动器
-        public static async Task FxLauncherAsync(RuntimeMode runtimeMode = RuntimeMode.Editor)
+        /// <summary>
+        /// FuXi启动器
+        /// </summary>
+        /// <param name="versionFileName">版本文件名称</param>
+        /// <param name="url">资源服务器地址</param>
+        /// <param name="runtimeMode">运行模式</param>
+        /// <returns></returns>
+        public static async Task FxLauncherAsync(
+            string versionFileName,
+            string url,
+            RuntimeMode runtimeMode = RuntimeMode.Editor)
         {
+            InitInternal(versionFileName, url, runtimeMode);
+            if (FxManager.RuntimeMode == RuntimeMode.Editor)
+            {
+                FxManager.ManifestVC.NewManifest = ParseManifestCallback?.Invoke();
+                FxManager.ManifestVC.InitEncrypt();
+            }
+            else
+            {
+                FxAsset.FxAssetCreate = FxAsset.CreateAsset;
+                FxScene.FxSceneCreate = FxScene.CreateScene;
+                FxRawAsset.FxRawAssetCreate = FxRawAsset.CreateRawAsset;
+                await new CheckLocalManifest().Execute();
+            }
+        }
+
+        public static CheckLocalManifest FxLauncherAsyncCo(
+            string versionFileName,
+            string url,
+            RuntimeMode runtimeMode = RuntimeMode.Editor)
+        {
+            CheckLocalManifest check = null;
+            InitInternal(versionFileName, url, runtimeMode);
+            if (FxManager.RuntimeMode == RuntimeMode.Editor)
+            {
+                FxManager.ManifestVC.NewManifest = ParseManifestCallback?.Invoke();
+                FxManager.ManifestVC.InitEncrypt();
+                check = new CheckLocalManifest{isDone = true};
+            }
+            else
+            {
+                FxAsset.FxAssetCreate = FxAsset.CreateAsset;
+                FxScene.FxSceneCreate = FxScene.CreateScene;
+                FxRawAsset.FxRawAssetCreate = FxRawAsset.CreateRawAsset;
+                check = new CheckLocalManifest();
+                check.Execute();
+            }
+            return check;
+        }
+
+        private static void InitInternal(
+            string versionFileName,
+            string url,
+            RuntimeMode runtimeMode)
+        {
+            FxManager.ManifestVC = new FxManifestDriver(versionFileName);
+            FxManager.PlatformURL = url;
             FxManager.RuntimeMode = runtimeMode;
             if (FxManager.RuntimeMode == RuntimeMode.Editor && !Application.isEditor)
             {
@@ -30,17 +85,6 @@ namespace FuXi
                 root.AddComponent<AssetPolling>();
             }
             UnityEngine.Object.DontDestroyOnLoad(root);
-            if (FxManager.RuntimeMode == RuntimeMode.Editor)
-                FxManager.ManifestVC.NewManifest = ParseManifestCallback?.Invoke();
-            else
-            {
-                FxAsset.FxAssetCreate = FxAsset.CreateAsset;
-                FxScene.FxSceneCreate = FxScene.CreateScene;
-                FxRawAsset.FxRawAssetCreate = FxRawAsset.CreateRawAsset;
-                await new CheckLocalManifest().Execute();
-            }
-            FxManager.ManifestVC.InitEncrypt();
-            FxDebug.Log("Init FuXi finished!");
         }
         
         #region Task 版本

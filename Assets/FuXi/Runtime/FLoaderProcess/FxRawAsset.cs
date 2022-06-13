@@ -16,7 +16,6 @@ namespace FuXi
         private BundleManifest m_BundleManifest;
         
         protected string m_PathOrURL;
-        private string m_SavePath;
         private LoadStep m_LoadStep;
 
         public byte[] Data;
@@ -69,7 +68,7 @@ namespace FuXi
                     this.Data = this.m_WebRequest.downloadHandler.data;
                     if (this.Data.Length == 0)
                     {
-                        FxDebug.ColorWarning(FxDebug.ColorStyle.Orange, "FxRawAsset read file {0} bytes failure", this.m_SavePath);
+                        FxDebug.ColorWarning(FxDebug.ColorStyle.Orange, "FxRawAsset read file {0} bytes failure", this.m_PathOrURL);
                         return;
                     }
                     if (FxManager.ManifestVC.GameEncrypt == null) return;

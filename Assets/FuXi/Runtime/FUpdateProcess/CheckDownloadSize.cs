@@ -14,7 +14,7 @@ namespace FuXi
             Finished
         }
         
-        internal DownloadInfo DownloadInfo;
+        public DownloadInfo DownloadInfo;
         private Action<float> m_CheckUpdate;
         private CheckSteps m_CheckStep;
         private readonly bool m_ContainsPackage = false;
