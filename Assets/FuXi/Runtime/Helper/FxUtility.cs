@@ -60,10 +60,12 @@ namespace FuXi
         {
             try
             {
-                using FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read);
-                MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-                var hashBytes = md5.ComputeHash(fs);
-                return Bytes2String(hashBytes);
+                using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+                {
+                    MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+                    var hashBytes = md5.ComputeHash(fs);
+                    return Bytes2String(hashBytes);
+                }
             }
             catch (Exception e)
             {
@@ -76,10 +78,12 @@ namespace FuXi
         {
             try
             {
-                using FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read);
-                Crc32Algorithm crc32 = new Crc32Algorithm();
-                var hashBytes = crc32.ComputeHash(fs);
-                return Bytes2String(hashBytes);
+                using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+                {
+                    Crc32Algorithm crc32 = new Crc32Algorithm();
+                    var hashBytes = crc32.ComputeHash(fs);
+                    return Bytes2String(hashBytes);
+                }
             }
             catch (Exception e)
             {
