@@ -16,7 +16,6 @@ namespace FuXi
         {
             var res = FxSceneCreate.Invoke(path, additive, true).Execute();
             var scene = (FxScene) res.Result;
-            RefreshRef(scene);
             return scene;
         }
         
@@ -24,7 +23,6 @@ namespace FuXi
         {
             var res = await FxSceneCreate.Invoke(path, additive, false).Execute();
             var scene = (FxScene) res;
-            RefreshRef(scene);
             return scene;
         }
 
@@ -32,11 +30,10 @@ namespace FuXi
         {
             var scene = FxSceneCreate.Invoke(path, additive, false);
             scene.Execute();
-            RefreshRef(scene);
             return scene;
         }
 
-        private static void RefreshRef(FxScene fxScene)
+        protected static void RefreshRef(FxScene fxScene)
         {
             if (fxScene.m_LoadMode == LoadSceneMode.Additive)
                 Main?.m_SubScenes.Add(fxScene);

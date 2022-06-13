@@ -51,6 +51,7 @@ namespace FuXi
 
         internal void Release()
         {
+            if (this.m_LoaderList == null) return;
             foreach (var refLoader in this.m_LoaderList)
                 refLoader.SubReference();
         }

@@ -15,11 +15,7 @@ namespace FuXi
                 
                 var p = Processes[i];
                 p.Update();
-                if (p.isDone)
-                {
-                    p.Dispose();
-                    Processes.RemoveAt(i);
-                }
+                if (p.isDone) Processes.RemoveAt(i);
             }
         }
 

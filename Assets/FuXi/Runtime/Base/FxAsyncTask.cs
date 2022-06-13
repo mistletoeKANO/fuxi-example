@@ -5,9 +5,9 @@ namespace FuXi
 {
     public partial class FxAsyncTask : IEnumerator
     {
-        internal bool isDone;
-        internal float progress;
-        internal string error;
+        public bool isDone;
+        public float progress;
+        public string error;
         
         public bool MoveNext() => !isDone;
         public void Reset() { }

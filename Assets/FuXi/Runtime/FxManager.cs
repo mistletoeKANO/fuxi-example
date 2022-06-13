@@ -150,7 +150,7 @@ namespace FuXi
         /// <returns></returns>
         public static CheckWWWManifest FxCheckUpdateCo(Action<float> checkUpdate = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return null;
+            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return default;
             var check = new CheckWWWManifest(checkUpdate);
             check.Execute();
             return check;
@@ -164,7 +164,7 @@ namespace FuXi
         /// <returns></returns>
         public static CheckDownloadSize FxCheckDownloadSizeCo(string[] packages, Action<float> checkDownload = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return null;
+            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return default;
             var check = new CheckDownloadSize(packages, checkDownload);
             check.Execute();
             return check;
@@ -178,7 +178,7 @@ namespace FuXi
         /// <returns></returns>
         public static CheckDownloadSize FxCheckDownloadSizeCo(bool containsPackage = false, Action<float> checkDownload = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return null;
+            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return new CheckDownloadSize {isDone = true};
             var check = new CheckDownloadSize(containsPackage, checkDownload);
             check.Execute();
             return check;
@@ -192,7 +192,8 @@ namespace FuXi
         /// <returns></returns>
         public static CheckDownloadBundle FxCheckDownloadCo(DownloadInfo downloadInfo, Action<float> checkDownload = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return null;
+            if (FxManager.RuntimeMode != RuntimeMode.Runtime)
+                return new CheckDownloadBundle(default, null) {isDone = true};
             var check = new CheckDownloadBundle(downloadInfo, checkDownload);
             check.Execute();
             return check;

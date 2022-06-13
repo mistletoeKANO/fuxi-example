@@ -108,7 +108,7 @@ namespace FuXi
 
         protected override void Dispose()
         {
-            this.m_BundleLoader.Dispose();
+            this.m_BundleLoader?.Dispose();
             this.m_BundleLoader = null;
         }
     }

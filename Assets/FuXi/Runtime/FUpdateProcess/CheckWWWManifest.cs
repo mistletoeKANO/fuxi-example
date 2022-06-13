@@ -61,6 +61,7 @@ namespace FuXi
         {
             this.m_UnityWebRequest?.Dispose();
             this.m_UnityWebRequest = UnityWebRequest.Get(url);
+            this.m_UnityWebRequest.timeout = 6;
             this.m_UnityWebRequest.disposeDownloadHandlerOnDispose = true;
             this.m_AsyncOperation = this.m_UnityWebRequest.SendWebRequest();
         }

@@ -45,6 +45,7 @@ namespace FuXi
             {
                 if (this.m_BundleLoader.mainLoader.assetBundle != null)
                     SceneManager.LoadScene(this.m_ScenePath, this.m_LoadMode);
+                RefreshRef(this);
                 this.tcs.SetResult(this);
                 this.isDone = true;
             }
@@ -67,7 +68,11 @@ namespace FuXi
                     this.m_LoadStep = LoadSceneSteps.LoadScene;
                     break;
                 case LoadSceneSteps.LoadScene:
-                    if (!this.m_Operation.isDone) return;
+                    if (this.m_Operation.allowSceneActivation)
+                        if (!this.m_Operation.isDone) return;
+                    else
+                        if (this.m_Operation.progress < 0.9f) return;
+                    RefreshRef(this);
                     this.isDone = true;
                     this.tcs.SetResult(this);
                     break;
@@ -77,11 +82,11 @@ namespace FuXi
         private void Release()
         {
             this.m_BundleLoader.Release();
-            SceneManager.UnloadSceneAsync(this.m_ScenePath);
             foreach (var fxScene in this.m_SubScenes)
             {
                 fxScene.Release();
             }
+            SceneManager.UnloadSceneAsync(this.m_ScenePath);
             this.m_SubScenes.Clear();
             this.Dispose();
         }
