@@ -242,14 +242,18 @@ namespace FuXi.Editor
 
         private void DelayBuildBundle()
         {
-            using IBuild pipeline = new BuildBundleProcess((Fx_BuildAsset) this.target);
-            pipeline.BeginBuild();
+            using (IBuild pipeline = new BuildBundleProcess((Fx_BuildAsset) this.target))
+            {
+                pipeline.BeginBuild();
+            }
         }
         
         private void DelayBuildPlayer()
         {
-            using IBuild pipeline = new BuildPlayerProcess((Fx_BuildAsset) this.target);
-            pipeline.BeginBuild();
+            using (IBuild pipeline = new BuildPlayerProcess((Fx_BuildAsset) this.target))
+            {
+                pipeline.BeginBuild();
+            }
         }
     }
 }

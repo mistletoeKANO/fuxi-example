@@ -52,7 +52,7 @@ namespace FuXi
                 case CheckLocalMStep.ParseManifest:
                     this.progress = this.m_AsyncOperation.progress;
                     if (!this.m_UnityWebRequest.isDone) return;
-                    if (this.m_UnityWebRequest.result == UnityWebRequest.Result.Success)
+                    if (string.IsNullOrEmpty(this.m_UnityWebRequest.error))
                     {
                         FxDebug.Log($"Load local manifest file: {this.m_UrlOrPath}");
                         var readValue = System.Text.Encoding.UTF8.GetString(this.m_UnityWebRequest.downloadHandler.data);

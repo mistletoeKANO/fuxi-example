@@ -133,14 +133,18 @@ namespace FuXi.Editor
         private void DelayCopyBundle()
         {
             var fxAsset = AssetDatabase.LoadAssetAtPath<Fx_BuildAsset>(AssetDatabase.GetAssetPath(this.target));
-            using BuildPlayerProcess pipeline = new BuildPlayerProcess(fxAsset);
-            pipeline.BeginCopyBundle();
+            using (BuildPlayerProcess pipeline = new BuildPlayerProcess(fxAsset))
+            {
+                pipeline.BeginCopyBundle();
+            }
         }
         
         private void DelayClearBundle()
         {
-            using BuildPlayerProcess pipeline = new BuildPlayerProcess();
-            pipeline.BeginClearStreamingAssets();
+            using (BuildPlayerProcess pipeline = new BuildPlayerProcess())
+            {
+                pipeline.BeginClearStreamingAssets();
+            }
         }
     }
 }

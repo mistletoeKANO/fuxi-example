@@ -90,11 +90,13 @@ namespace FuXi
                     this.assetBundle = AssetBundle.LoadFromFile(this.m_PathOrURL, 0, offset);
                 }else if (FxManager.ManifestVC.GameEncrypt.EncryptMode == EncryptMode.XOR)
                 {
-                    using FileStream fileStream = new FileStream(this.m_PathOrURL, FileMode.Open, FileAccess.Read);
-                    byte[] buffer = new byte[fileStream.Length];
-                    fileStream.Read(buffer, 0, buffer.Length);
-                    buffer = FxManager.ManifestVC.GameEncrypt.DeEncrypt(buffer);
-                    this.assetBundle = AssetBundle.LoadFromMemory(buffer, 0);
+                    using (FileStream fileStream = new FileStream(this.m_PathOrURL, FileMode.Open, FileAccess.Read))
+                    {
+                        byte[] buffer = new byte[fileStream.Length];
+                        fileStream.Read(buffer, 0, buffer.Length);
+                        buffer = FxManager.ManifestVC.GameEncrypt.DeEncrypt(buffer);
+                        this.assetBundle = AssetBundle.LoadFromMemory(buffer, 0);
+                    }
                 }
             }
             else
@@ -111,11 +113,13 @@ namespace FuXi
                     this.m_BundleRequest = AssetBundle.LoadFromFileAsync(this.m_PathOrURL, 0, offset);
                 }else if (FxManager.ManifestVC.GameEncrypt.EncryptMode == EncryptMode.XOR)
                 {
-                    using FileStream fileStream = new FileStream(this.m_PathOrURL, FileMode.Open, FileAccess.Read);
-                    byte[] buffer = new byte[fileStream.Length];
-                    fileStream.Read(buffer, 0, buffer.Length);
-                    buffer = FxManager.ManifestVC.GameEncrypt.DeEncrypt(buffer);
-                    this.m_BundleRequest = AssetBundle.LoadFromMemoryAsync(buffer, 0);
+                    using (FileStream fileStream = new FileStream(this.m_PathOrURL, FileMode.Open, FileAccess.Read))
+                    {
+                        byte[] buffer = new byte[fileStream.Length];
+                        fileStream.Read(buffer, 0, buffer.Length);
+                        buffer = FxManager.ManifestVC.GameEncrypt.DeEncrypt(buffer);
+                        this.m_BundleRequest = AssetBundle.LoadFromMemoryAsync(buffer, 0);
+                    }
                 }
             }
             else

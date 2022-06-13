@@ -4,9 +4,9 @@ namespace FuXi.Editor
 {
     internal interface IBuild : IDisposable
     {
-        public void BeginBuild();
-        public void EndBuild();
+        void BeginBuild();
+        void EndBuild();
 
-        public void OnAssetValueChanged();
+        void OnAssetValueChanged();
     }
 }

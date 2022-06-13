@@ -70,7 +70,8 @@ namespace FuXi
 
         internal static void StartWatch()
         {
-            mStopWatch ??= System.Diagnostics.Stopwatch.StartNew();
+            if (null == mStopWatch)
+                mStopWatch = System.Diagnostics.Stopwatch.StartNew();
             mStopWatch.Restart();
         }
 

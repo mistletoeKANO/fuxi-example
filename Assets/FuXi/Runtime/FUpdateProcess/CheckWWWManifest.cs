@@ -72,8 +72,7 @@ namespace FuXi
             this.m_UpdateProgress?.Invoke(this.progress);
             if (!this.m_AsyncOperation.isDone) return;
             
-            if (this.m_UnityWebRequest.result != UnityWebRequest.Result.Success 
-                || !string.IsNullOrEmpty(this.m_UnityWebRequest.error) 
+            if (!string.IsNullOrEmpty(this.m_UnityWebRequest.error) 
                 || this.m_CurStep == CheckVersionSteps.Failure)
             {
                 if (this.m_CurRetryCount < this.m_RetryCount)
