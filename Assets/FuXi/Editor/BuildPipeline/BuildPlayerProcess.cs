@@ -96,7 +96,7 @@ namespace FuXi.Editor
             var versionFile = FxBuildPath.BundleFullPath($"{manifestName}{FxPathHelper.VersionFileExtension}");
             var versionDest = FxBuildPath.CopyFullSavePath($"{manifestName}{FxPathHelper.VersionFileExtension}");
             var encrypt = BuildHelper.LoadEncryptObject(this.buildSetting.EncryptType);
-            if (encrypt.EncryptMode == EncryptMode.XOR)
+            if (null != encrypt && encrypt.EncryptMode == EncryptMode.XOR)
             {
                 File.Copy(manifestPath, manifestDest, true);
                 File.Copy(versionFile, versionDest, true);
