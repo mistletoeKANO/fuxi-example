@@ -153,7 +153,7 @@ namespace FuXi.Editor
         private void OnGUI()
         {
             serializedObject.Update();
-            EditorGUIUtility.labelWidth = 80;
+            EditorGUIUtility.labelWidth = 120;
             EditorGUILayout.BeginHorizontal();
 
             GUI.enabled = false;

@@ -7,10 +7,10 @@ namespace FuXi.Editor
 {
     public class FxEditorAsset : FxAsset
     {
-        internal static FxEditorAsset CreateEditorAsset(string path, Type type, bool immediate)
-        { return new FxEditorAsset(path, type, immediate); }
+        internal static FxEditorAsset CreateEditorAsset(string path, Type type, bool immediate, Action<FxAsset> callback)
+        { return new FxEditorAsset(path, type, immediate, callback); }
         
-        FxEditorAsset(string path, Type type, bool loadImmediate) : base(path, type, loadImmediate) { }
+        FxEditorAsset(string path, Type type, bool loadImmediate, Action<FxAsset> callback) : base(path, type, loadImmediate, callback) { }
         internal override Task<FxAsyncTask> Execute()
         {
             base.Execute();

@@ -19,16 +19,18 @@ namespace FuXi
         private BundleLoader m_BundleLoader;
         private AssetBundleRequest m_BundleRequest;
         private LoadSteps m_LoadStep;
+        private Action<FxAsset> m_Completed;
 
         protected readonly string m_FilePath;
         protected readonly Type m_Type;
         public UnityEngine.Object asset;
 
-        internal FxAsset(string path, Type type, bool loadImmediate)
+        internal FxAsset(string path, Type type, bool loadImmediate, Action<FxAsset> callback)
         {
             this.m_FilePath = path;
             this.m_Type = type;
             this.m_LoadImmediate = loadImmediate;
+            this.m_Completed = callback;
             this.m_BundleLoader = new BundleLoader();
             this.fxReference = new FxReference();
         }
@@ -41,6 +43,7 @@ namespace FuXi
             {
                 this.tcs.SetResult(this);
                 this.isDone = true;
+                this.m_Completed?.Invoke(this);
                 return this.tcs.Task;
             }
             this.m_BundleLoader.StartLoad(manifest, this.m_LoadImmediate);
@@ -84,6 +87,7 @@ namespace FuXi
                 case LoadSteps.Finished:
                     this.isDone = true;
                     this.tcs.SetResult(this);
+                    this.m_Completed?.Invoke(this);
                     break;
             }
         }

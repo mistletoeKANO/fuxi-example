@@ -27,9 +27,14 @@ namespace Builtin
                 GameDebugger.Log("下载完成");
             }else GameDebugger.Log("未检测到更新内容!");
 
-            var uiRoot = FxAsset.LoadAssetCo("Assets/Example/BundleResource/Prefabs/Game/UIRoot.prefab", typeof(GameObject));
-            yield return uiRoot;
-            UnityEngine.Object.Instantiate(uiRoot.asset);
+            // var uiRoot = FxAsset.LoadAssetCo("Assets/Example/BundleResource/Prefabs/Game/UIRoot.prefab", typeof(GameObject));
+            // yield return uiRoot;
+            // UnityEngine.Object.Instantiate(uiRoot.asset);
+            
+            FxAsset.LoadAssetAsync("Assets/Example/BundleResource/Prefabs/Game/UIRoot.prefab", typeof(GameObject), f =>
+            {
+                UnityEngine.Object.Instantiate(f.asset);
+            });
             
         }
 
