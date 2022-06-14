@@ -30,6 +30,8 @@ namespace Game.HotFix
 
             var json = await FxRawAsset.LoadRawAssetAsync("Assets/Example/BundleResource/Audios/encryptTest.json");
             GameDebugger.Log($"Raw asset : {json.Text}");
+            
+            SceneManager.Instance.SwitchScene<MainHomeScene>(SceneConfigs.MainHomeScene);
         }
 
         public override void Exist()

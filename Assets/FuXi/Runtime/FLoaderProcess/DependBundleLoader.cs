@@ -74,6 +74,7 @@ namespace FuXi
                     break;
                 case LoadStep.LoadBundle:
                     if (!this.m_BundleRequest.isDone) return;
+                    FxDebug.ColorLog(FxDebug.ColorStyle.Cyan, "LoadBundle {0}", this.m_PathOrURL);
                     this.assetBundle = this.m_BundleRequest.assetBundle;
                     this.isDone = true;
                     break;
@@ -134,9 +135,9 @@ namespace FuXi
         internal void SubReference()
         {
             if (!this.fxReference.SubRef()) return;
-            var bundleLoader = UsedBundleDic[this.m_BundleManifest.BundleHashName];
-            UnUsedBundle.Enqueue(bundleLoader);
-            UsedBundleDic.Remove(this.m_BundleManifest.BundleHashName);
+            if (this.fxReference.RefCount < 0)
+                FxDebug.ColorWarning(FxDebug.ColorStyle.Orange, "Release over: {0}", this.m_BundleManifest.BundleHashName);
+            ReleaseBundleLoader(this.m_BundleManifest);
         }
     }
 }

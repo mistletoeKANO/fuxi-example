@@ -86,7 +86,8 @@ namespace FuXi
             {
                 fxScene.Release();
             }
-            SceneManager.UnloadSceneAsync(this.m_ScenePath);
+            if (this != Main)
+                SceneManager.UnloadSceneAsync(this.m_ScenePath);
             this.m_SubScenes.Clear();
             this.Dispose();
         }

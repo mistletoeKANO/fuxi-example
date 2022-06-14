@@ -64,7 +64,12 @@ namespace FuXi.Editor
                     assetManifests.Add(new AssetManifest {Path = folderPath});
                 }
             }
-            foreach (var asManifest in assetManifests) manifest.Path2AssetManifest.Add(asManifest.Path, asManifest);
+
+            foreach (var asManifest in assetManifests)
+            {
+                if (manifest.Path2AssetManifest.ContainsKey(asManifest.Path)) continue;
+                manifest.Path2AssetManifest.Add(asManifest.Path, asManifest);
+            }
             return manifest;
         }
 

@@ -20,15 +20,25 @@ namespace FuXi
             }
         }
 
-        internal static DependBundleLoader ReferenceBundle(BundleManifest manifest)
+        internal static bool TryReferenceBundle(BundleManifest manifest, out DependBundleLoader bundleLoader)
         {
-            if (!UsedBundleDic.TryGetValue(manifest.BundleHashName, out var bundleLoader))
+            if (!UsedBundleDic.TryGetValue(manifest.BundleHashName, out bundleLoader))
             {
                 bundleLoader = new DependBundleLoader(manifest);
                 UsedBundleDic.Add(manifest.BundleHashName, bundleLoader);
+                bundleLoader.AddReference();
+                return false;
             }
             bundleLoader.AddReference();
-            return bundleLoader;
+            return true;
+        }
+        
+        private static void ReleaseBundleLoader(BundleManifest manifest)
+        {
+            if (!UsedBundleDic.ContainsKey(manifest.BundleHashName)) return;
+            var bundleLoader = UsedBundleDic[manifest.BundleHashName];
+            UnUsedBundle.Enqueue(bundleLoader);
+            UsedBundleDic.Remove(manifest.BundleHashName);
         }
     }
 }
