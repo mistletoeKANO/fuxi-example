@@ -10,9 +10,10 @@ namespace FuXi
     /// </summary>
     public static class FxManager
     {
+        public   static RuntimeMode RuntimeMode = RuntimeMode.Editor;
+        
         internal static FxManifestDriver ManifestVC;
         internal static System.Func<FxManifest> ParseManifestCallback;  // 用在Unity编辑器下初始化本地配置
-        internal static RuntimeMode RuntimeMode = RuntimeMode.Editor;
         internal static string PlatformURL;
         
         /// <summary>
