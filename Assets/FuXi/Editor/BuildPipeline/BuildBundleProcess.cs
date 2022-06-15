@@ -204,6 +204,7 @@ namespace FuXi.Editor
         private void BuildBundles()
         {
             if (this.m_BundleName2Builds.Count == 0) return;
+            EditorUtility.DisplayProgressBar("Prepare build assetBundle", "waiting...", 1);
             List<AssetBundleBuild> selects = new List<AssetBundleBuild>();
             foreach (var bundle in this.m_BundleName2Builds.Values)
             {
