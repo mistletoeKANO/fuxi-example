@@ -90,13 +90,14 @@ namespace FuXi.Editor
                         EditorUtility.DisplayProgressBar("Analysis Main Assets", p, progress);
                         
                         if (AssetDatabase.IsValidFolder(p)) continue;
-
-                        if (!isRawFile) this.m_MainAssets.Add(path);
+                        if (this.m_MainAssets.Contains(p)) continue;
+                        if (!isRawFile) this.m_MainAssets.Add(p);
                         this.AddAsset2BuildRecorder(fo.bundleMode, path, p);
                     }
                 }
                 else
                 {
+                    if (this.m_MainAssets.Contains(path)) continue;
                     if (!isRawFile) this.m_MainAssets.Add(path);
                     this.AddAsset2BuildRecorder(isRawFile? BundleMode.PackByRaw : BundleMode.PackByFile, null, path);
                 }
