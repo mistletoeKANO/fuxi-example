@@ -88,6 +88,7 @@ namespace FuXi.Editor
 
         internal static IEncrypt LoadEncryptObject(string typeName)
         {
+            if (string.IsNullOrEmpty(typeName)) return null;
             var assembles = AppDomain.CurrentDomain.GetAssemblies();
             foreach (var assembly in assembles)
             {
