@@ -91,6 +91,7 @@ namespace FuXi
             internal static readonly UnityEngine.Color Red = UnityEngine.Color.red;
             internal static readonly UnityEngine.Color Green = UnityEngine.Color.green;
             internal static readonly UnityEngine.Color Cyan = UnityEngine.Color.cyan;
+            internal static readonly UnityEngine.Color Cyan2 = new UnityEngine.Color(0.69f, 1f, 0.93f);
             internal static readonly UnityEngine.Color Orange = new UnityEngine.Color(1f, 0.35f, 0f);
         }
     }

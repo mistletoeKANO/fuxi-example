@@ -6,7 +6,7 @@ namespace FuXi
 {
     public class AssetPolling : MonoBehaviour
     {
-        private static readonly float timeSlice = 0.05f; // s
+        private static readonly float timeSlice = 0.04f; // s
         private static float lastCheckTime = 0;
         internal static bool IsTimeOut
         {
@@ -26,6 +26,7 @@ namespace FuXi
         private void Update()
         {
             FxAsyncTask.UpdateProcess();
+            FxScene.UpdateUnused();
             DependBundleLoader.UpdateUnUsed();
         }
 

@@ -71,20 +71,21 @@ namespace FuXi
                         FxDebug.ColorWarning(FxDebug.ColorStyle.Orange, "FxRawAsset read file {0} bytes failure", this.m_PathOrURL);
                         return;
                     }
-                    if (FxManager.ManifestVC.GameEncrypt == null) return;
-                    if (!FxManager.ManifestVC.GameEncrypt.IsEncrypted(this.Data)) return;
-            
-                    if (FxManager.ManifestVC.GameEncrypt.EncryptMode == EncryptMode.OFFSET)
+                    if (FxManager.ManifestVC.GameEncrypt != null && FxManager.ManifestVC.GameEncrypt.IsEncrypted(this.Data))
                     {
-                        var header = FxManager.ManifestVC.GameEncrypt.EncryptOffset();
-                        int newSize = this.Data.Length - header.Length;
-                        System.Array.Copy(this.Data, header.Length, this.Data, 0, newSize);
-                        System.Array.Resize(ref this.Data, newSize);
+                        if (FxManager.ManifestVC.GameEncrypt.EncryptMode == EncryptMode.OFFSET)
+                        {
+                            var header = FxManager.ManifestVC.GameEncrypt.EncryptOffset();
+                            int newSize = this.Data.Length - header.Length;
+                            System.Array.Copy(this.Data, header.Length, this.Data, 0, newSize);
+                            System.Array.Resize(ref this.Data, newSize);
+                        }
+                        else if (FxManager.ManifestVC.GameEncrypt.EncryptMode == EncryptMode.XOR)
+                        {
+                            this.Data = FxManager.ManifestVC.GameEncrypt.DeEncrypt(this.Data);
+                        }
                     }
-                    else if (FxManager.ManifestVC.GameEncrypt.EncryptMode == EncryptMode.XOR)
-                    {
-                        this.Data = FxManager.ManifestVC.GameEncrypt.DeEncrypt(this.Data);
-                    }
+                    
                     this.isDone = true;
                     this.tcs.SetResult(this);
                     break;

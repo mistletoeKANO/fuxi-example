@@ -21,6 +21,7 @@ namespace FuXi.Editor
             }
             else
             {
+                RefreshRef(this);
                 if (this.m_Immediate)
                 {
                     EditorSceneManager.LoadSceneInPlayMode(this.m_ScenePath, new LoadSceneParameters(this.m_LoadMode));
@@ -39,7 +40,7 @@ namespace FuXi.Editor
         {
             if (this.isDone) return;
             if (!this.m_Operation.isDone) return;
-            RefreshRef(this);
+            
             this.tcs.SetResult(this);
             this.isDone = true;
         }

@@ -99,7 +99,7 @@ namespace FuXi
 
         public void Release()
         {
-            this.m_BundleLoader.Release();
+            this.m_BundleLoader?.Release();
             if (!this.fxReference.SubRef()) return;
 
             AssetCache.Remove(this.m_FilePath);
@@ -109,7 +109,6 @@ namespace FuXi
         protected override void Dispose()
         {
             this.m_BundleLoader?.Dispose();
-            this.m_BundleLoader = null;
         }
     }
 }

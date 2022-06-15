@@ -18,9 +18,10 @@ namespace FuXi
         internal AsyncOperation m_Operation;
         
         private readonly List<FxScene> m_SubScenes = new List<FxScene>();
-        private BundleLoader m_BundleLoader;
+        private readonly BundleLoader m_BundleLoader;
 
         private LoadSceneSteps m_LoadStep;
+        private FxScene m_Parent;
 
         internal FxScene(string path, bool additive, bool immediate)
         {
@@ -40,12 +41,12 @@ namespace FuXi
                 this.isDone = true;
                 return this.tcs.Task;
             }
+            RefreshRef(this);
             this.m_BundleLoader.StartLoad(manifest, this.m_Immediate);
             if (this.m_Immediate)
             {
                 if (this.m_BundleLoader.mainLoader.assetBundle != null)
                     SceneManager.LoadScene(this.m_ScenePath, this.m_LoadMode);
-                RefreshRef(this);
                 this.tcs.SetResult(this);
                 this.isDone = true;
             }
@@ -72,7 +73,6 @@ namespace FuXi
                         if (!this.m_Operation.isDone) return;
                     else
                         if (this.m_Operation.progress < 0.9f) return;
-                    RefreshRef(this);
                     this.isDone = true;
                     this.tcs.SetResult(this);
                     break;
@@ -81,21 +81,28 @@ namespace FuXi
 
         private void Release()
         {
-            this.m_BundleLoader.Release();
+            UnUsed.Enqueue(this);
+        }
+
+        private void UnLoad()
+        {
+            if (this.m_Parent != null)
+            {
+                SceneManager.UnloadSceneAsync(this.m_ScenePath);
+                FxDebug.ColorLog(FxDebug.ColorStyle.Cyan2, "Unload scene {0}", this.m_ScenePath);
+            }
+            this.m_BundleLoader?.Release();
             foreach (var fxScene in this.m_SubScenes)
             {
                 fxScene.Release();
             }
-            if (this != Main)
-                SceneManager.UnloadSceneAsync(this.m_ScenePath);
             this.m_SubScenes.Clear();
             this.Dispose();
         }
 
         protected override void Dispose()
         {
-            this.m_BundleLoader.Dispose();
-            this.m_BundleLoader = null;
+            this.m_BundleLoader?.Dispose();
         }
     }
 }

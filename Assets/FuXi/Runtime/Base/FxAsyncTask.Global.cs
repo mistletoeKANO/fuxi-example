@@ -11,11 +11,10 @@ namespace FuXi
             if (Processes.Count == 0) return;
             for (int i = 0; i < Processes.Count; i++)
             {
-                if (AssetPolling.IsTimeOut) break;
-                
                 var p = Processes[i];
                 p.Update();
                 if (p.isDone) Processes.RemoveAt(i);
+                if (AssetPolling.IsTimeOut) break;
             }
         }
 
