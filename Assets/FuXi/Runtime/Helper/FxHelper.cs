@@ -58,6 +58,21 @@ namespace FuXi
             if (!Directory.Exists(path)) Directory.CreateDirectory(path);
             return path;
         }
+        
+        /// <summary>
+        /// application.persistentDataPath 的UnityWebRequest.Get
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        internal static string PersistentLoadURL(string path)
+        {
+            switch (Application.platform)
+            {
+                case RuntimePlatform.Android:
+                    return $"file://{PersistentRootPath()}/{path}";
+            }
+            return path;
+        }
 
         /// <summary>
         /// 获取网络资源加载路径

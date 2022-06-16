@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Build;
@@ -59,6 +61,7 @@ namespace FuXi.Editor
                 this.EncryptBundles();                // 加密AssetBundle包
                 this.AnalysisPackageDependencies();   // 分析分包依赖Bundle包
                 this.WriteManifest();                 // 生成版本文件
+                this.CopyVersionFile();               // 拷贝版本差异文件
                 this.RemoveUnityManifest();
                 this.EndBuild();                      // End
                 this.BuildBundlePostProcess();        // 构建后处理
@@ -123,7 +126,7 @@ namespace FuXi.Editor
             {
                 var asset = this.m_MainAssets[i];
                 float progress = i / (float) count;
-                this.cancel = EditorUtility.DisplayCancelableProgressBar("Analysis Dependencies Assets", asset, progress);
+                this.cancel = EditorUtility.DisplayCancelableProgressBar($"Analysis Dependencies Assets {i}/{count}", asset, progress);
                 if (this.cancel) { throw new Exception("Cancel!!!");}
                 
                 var dependencies = AssetDatabase.GetDependencies(asset);
@@ -375,10 +378,43 @@ namespace FuXi.Editor
             File.WriteAllText(manifestSavePath, jsonContent);
             Debug.Log($"生成版本清单文件: {manifestSavePath}");
 
+            var vManifestSavePath = FxBuildPath.BundleFullPath(
+                    $"{trimName}_V{this.buildAsset.bundleVersion}{FxPathHelper.ManifestFileExtension}");
+            File.WriteAllText(vManifestSavePath, jsonContent);
+
             var manifestHash = FxUtility.FileMd5(manifestSavePath);
             var hashSavePath = FxBuildPath.BundleFullPath($"{trimName}{FxPathHelper.VersionFileExtension}");
             File.WriteAllText(hashSavePath, manifestHash);
             Debug.Log($"生成版本清单Hash文件: {hashSavePath}");
+        }
+
+        /// <summary>
+        /// 拷贝当前版本差异文件
+        /// </summary>
+        private void CopyVersionFile()
+        {
+            EditorUtility.DisplayProgressBar("Copy version difference bundle.", "waiting...", 0);
+            var trimName = this.buildAsset.name.Replace(" ", "");
+            var oldV = this.buildAsset.bundleVersion - 1;
+            var oldFile = FxBuildPath.BundleFullPath($"{trimName}_V{oldV}{FxPathHelper.ManifestFileExtension}");
+            if (!File.Exists(oldFile))
+                oldFile = FxBuildPath.BundleFullPath($"{trimName}{FxPathHelper.ManifestFileExtension}");
+            var oldManifest = FxManifest.Parse(File.ReadAllText(oldFile, Encoding.UTF8));
+            var newFile = FxBuildPath.BundleFullPath($"{trimName}_V{this.buildAsset.bundleVersion}{FxPathHelper.ManifestFileExtension}");
+            var newManifest = FxManifest.Parse(File.ReadAllText(newFile, Encoding.UTF8));
+
+            var verDir = FxBuildPath.BundleFullPath($"{trimName}_V{this.buildAsset.bundleVersion}");
+            if (!Directory.Exists(verDir))
+                Directory.CreateDirectory(verDir);
+
+            var diffs = newManifest.Name2BundleManifest.Keys.Except(oldManifest.Name2BundleManifest.Keys).ToList();
+            for (int i = 0; i < diffs.Count; i++)
+            {
+                EditorUtility.DisplayProgressBar("Copy version difference bundle.", diffs[i], i / (float) diffs.Count);
+                var path = FxBuildPath.BundleFullPath(diffs[i]);
+                var save = $"{verDir}/{diffs[i]}";
+                File.Copy(path, save, true);
+            }
         }
 
         private void RemoveUnityManifest()

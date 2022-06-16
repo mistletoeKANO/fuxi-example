@@ -28,7 +28,21 @@ MonoBehaviour:
   bundleVersion: 0
   playerVersion: 0
   buildAssetBundleOptions: 256
-  fx_Objects: []
+  fx_Objects:
+  - bundleMode: 0
+    folder: {fileID: 102900000, guid: 5e45613fd2aeb4240a34e2cb63d96fd2, type: 3}
+  - bundleMode: 0
+    folder: {fileID: 102900000, guid: ffbe76db0e71c2442a09e671ec8a2294, type: 3}
+  - bundleMode: 2
+    folder: {fileID: 102900000, guid: d2102f2a672d275428fccdec3fee8b53, type: 3}
+  - bundleMode: 0
+    folder: {fileID: 102900000, guid: b3400600b5db240468553d22d89ab1d8, type: 3}
+  - bundleMode: 0
+    folder: {fileID: 102900000, guid: 0e7886fbfa9f49f409f9fcee468a2ca0, type: 3}
+  - bundleMode: 2
+    folder: {fileID: 102900000, guid: 9d2c1c82a815b504695f9a36fe6815a4, type: 3}
+  - bundleMode: 2
+    folder: {fileID: 102900000, guid: a4856af41406fc6429e54cfc3f08412b, type: 3}
 --- !u!114 &654999977308767811
 MonoBehaviour:
   m_ObjectHideFlags: 0

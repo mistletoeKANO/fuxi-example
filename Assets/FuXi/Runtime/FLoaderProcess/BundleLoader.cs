@@ -44,7 +44,7 @@ namespace FuXi
             {
                 if (bundleLoader.isDone) continue;
                 bundleLoader.Update();
-                isFinished = false;
+                isFinished = bundleLoader.isDone;
             }
             this.isDone = isFinished;
         }

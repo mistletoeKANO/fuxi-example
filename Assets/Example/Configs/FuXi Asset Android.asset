@@ -44,7 +44,7 @@ MonoBehaviour:
   playerVersion: 1.0
   buildAssetBundleOptions: 256
   fx_Objects:
-  - bundleMode: 4
+  - bundleMode: 0
     folder: {fileID: 102900000, guid: 5e45613fd2aeb4240a34e2cb63d96fd2, type: 3}
   - bundleMode: 0
     folder: {fileID: 102900000, guid: ffbe76db0e71c2442a09e671ec8a2294, type: 3}
@@ -56,6 +56,8 @@ MonoBehaviour:
     folder: {fileID: 102900000, guid: 0e7886fbfa9f49f409f9fcee468a2ca0, type: 3}
   - bundleMode: 2
     folder: {fileID: 102900000, guid: 9d2c1c82a815b504695f9a36fe6815a4, type: 3}
+  - bundleMode: 2
+    folder: {fileID: 102900000, guid: a4856af41406fc6429e54cfc3f08412b, type: 3}
 --- !u!114 &6323313161569891686
 MonoBehaviour:
   m_ObjectHideFlags: 0

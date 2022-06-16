@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
 namespace FuXi
@@ -29,7 +31,7 @@ namespace FuXi
 
         internal void Start(BundleManifest manifest)
         {
-            this.m_URL = $"{FxManager.PlatformURL}/{manifest.BundleHashName}";
+            this.m_URL = $"{FxManager.PlatformURL}{manifest.BundleHashName}";
             this.m_SavePath = FxPathHelper.PersistentLoadPath(manifest.BundleHashName);
 
             this.m_Crc = manifest.CRC;
@@ -141,6 +143,10 @@ namespace FuXi
                 if (offset > 0) ftpRequest.ContentOffset = offset;
                 return ftpRequest;
             }
+            if (this.m_URL.StartsWith("https", StringComparison.OrdinalIgnoreCase))
+            {
+                ServicePointManager.ServerCertificateValidationCallback = CheckValidationResult;
+            }
             
             var httpRequest = (HttpWebRequest) WebRequest.Create(this.m_URL);
             httpRequest.ProtocolVersion = HttpVersion.Version10;
@@ -152,6 +158,12 @@ namespace FuXi
         {
             this.m_Running = false;
             this.m_Thread = null;
+        }
+        
+        private static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain,
+            SslPolicyErrors spe)
+        {
+            return true;
         }
     }
 }
