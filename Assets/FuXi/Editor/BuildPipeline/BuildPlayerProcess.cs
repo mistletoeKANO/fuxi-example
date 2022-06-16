@@ -2,7 +2,6 @@
 using System.IO;
 using System.Text;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -14,6 +13,7 @@ namespace FuXi.Editor
     {
         private readonly Fx_BuildAsset buildAsset;
         private readonly Fx_BuildSetting buildSetting;
+        private readonly List<IBuildPlayerPreprocess> playerPreprocesses;
 
         internal BuildPlayerProcess(Fx_BuildAsset asset = null)
         {
@@ -21,6 +21,7 @@ namespace FuXi.Editor
             this.buildAsset = asset;
             var assetPath = AssetDatabase.GetAssetPath(asset);
             this.buildSetting = AssetDatabase.LoadAssetAtPath<Fx_BuildSetting>(assetPath);
+            this.playerPreprocesses = ProcessingHelper.AcquireAllPlayerPreProcess();
         }
 
         public void BeginBuild()
@@ -30,9 +31,11 @@ namespace FuXi.Editor
             EditorExtension.ClearConsole();
             try
             {
+                this.BuildPlayerPreProcess();
                 this.CopyBuiltinBundles();
                 this.BuildPlayer();
                 this.EndBuild();
+                this.BuildBundlePostProcess();
             }
             catch (Exception e)
             {
@@ -64,6 +67,12 @@ namespace FuXi.Editor
         {
             this.EndBuild();
             Debug.Log("clear finished!");
+        }
+        
+        private void BuildPlayerPreProcess()
+        {
+            foreach (var process in this.playerPreprocesses)
+                process.BuildPlayerPre();
         }
 
         /// <summary>
@@ -207,6 +216,12 @@ namespace FuXi.Editor
                 AssetDatabase.DeleteAsset(FxBuildPath.CopyRootPath());
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+        }
+        
+        private void BuildBundlePostProcess()
+        {
+            foreach (var process in this.playerPreprocesses)
+                process.BuildPlayerPost();
         }
         
         private string BuildPlayerName(string version)

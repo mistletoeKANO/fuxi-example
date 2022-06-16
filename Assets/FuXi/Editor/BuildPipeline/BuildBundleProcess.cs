@@ -17,6 +17,7 @@ namespace FuXi.Editor
         private readonly Fx_BuildAsset buildAsset;
         private readonly Fx_BuildSetting buildSetting;
         private readonly List<Fx_BuildPackage> buildPackages;
+        private readonly List<IBuildBundlePreprocess> bundlePreprocesses;
         
         private IEncrypt mEncrypt;
         private AssetBundleManifest manifest;
@@ -38,6 +39,7 @@ namespace FuXi.Editor
                 if (o is Fx_BuildSetting setting) { this.buildSetting = setting; }
                 if (o is Fx_BuildPackage package) { this.buildPackages.Add(package); }
             }
+            this.bundlePreprocesses = ProcessingHelper.AcquireAllBundlePreProcess();
         }
 
         public void BeginBuild()
@@ -47,6 +49,7 @@ namespace FuXi.Editor
             EditorExtension.ClearConsole();
             try
             {
+                this.BuildBundlePreProcess();         // 构建前预处理
                 this.AnalysisMainAssets();            // 分析主要资产
                 this.AnalysisDependenciesAssets();    // 分析依赖资产
                 this.AnalysisPackage();               // 分析分包资产
@@ -57,6 +60,7 @@ namespace FuXi.Editor
                 this.WriteManifest();                 // 生成版本文件
                 this.RemoveUnityManifest();
                 this.EndBuild();                      // End
+                this.BuildBundlePostProcess();        // 构建后处理
             }
             catch (Exception e)
             {
@@ -64,6 +68,12 @@ namespace FuXi.Editor
                 throw new BuildFailedException(e);
             }
             if (this.buildAsset != null) Selection.activeObject = this.buildAsset;
+        }
+
+        private void BuildBundlePreProcess()
+        {
+            foreach (var process in this.bundlePreprocesses)
+                process.BuildBundlePre();
         }
         
         private void AnalysisMainAssets()
@@ -439,6 +449,12 @@ namespace FuXi.Editor
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Debug.Log("build bundle succeed!");
+        }
+
+        private void BuildBundlePostProcess()
+        {
+            foreach (var process in this.bundlePreprocesses)
+                process.BuildBundlePost();
         }
         
         public void OnAssetValueChanged() => EditorUtility.SetDirty(this.buildAsset);

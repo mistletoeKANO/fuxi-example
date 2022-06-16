@@ -76,7 +76,7 @@ namespace FuXi.Editor
             return options.ToArray();
         }
 
-        private static bool CheckIgnore(string name)
+        internal static bool CheckIgnore(string name)
         {
             foreach (var assemble in IgnoreAssembles)
             {
