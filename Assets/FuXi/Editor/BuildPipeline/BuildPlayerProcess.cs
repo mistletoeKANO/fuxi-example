@@ -81,7 +81,6 @@ namespace FuXi.Editor
         private void CopyBuiltinBundles()
         {
             if (this.buildSetting == null) return;
-            if (this.buildSetting.BuiltinPackages.Count == 0 && !this.buildSetting.CopyAllBundle2Player) return;
 
             var manifestName = this.buildAsset.name.Replace(" ", "");
             var manifestPath = FxBuildPath.BundleFullPath($"{manifestName}{FxPathHelper.ManifestFileExtension}");
@@ -89,6 +88,16 @@ namespace FuXi.Editor
 
             var readStr = File.ReadAllText(manifestPath, Encoding.UTF8);
             if (string.IsNullOrEmpty(readStr)) return;
+            
+            var manifestDest = FxBuildPath.CopyFullSavePath($"{manifestName}{FxPathHelper.ManifestFileExtension}");
+            var versionFile = FxBuildPath.BundleFullPath($"{manifestName}{FxPathHelper.VersionFileExtension}");
+            var versionDest = FxBuildPath.CopyFullSavePath($"{manifestName}{FxPathHelper.VersionFileExtension}");
+            if (this.buildSetting.BuiltinPackages.Count == 0 && !this.buildSetting.CopyAllBundle2Player)
+            {
+                File.Copy(manifestPath, manifestDest, true);
+                File.Copy(versionFile, versionDest, true);
+                return;
+            }
 
             var manifest = JsonUtility.FromJson<FxManifest>(readStr);
             for (int i = 0; i < manifest.Bundles.Length; i++)
@@ -101,9 +110,6 @@ namespace FuXi.Editor
                 return;
             }
             
-            var manifestDest = FxBuildPath.CopyFullSavePath($"{manifestName}{FxPathHelper.ManifestFileExtension}");
-            var versionFile = FxBuildPath.BundleFullPath($"{manifestName}{FxPathHelper.VersionFileExtension}");
-            var versionDest = FxBuildPath.CopyFullSavePath($"{manifestName}{FxPathHelper.VersionFileExtension}");
             var encrypt = BuildHelper.LoadEncryptObject(this.buildSetting.EncryptType);
             if (null != encrypt && encrypt.EncryptMode == EncryptMode.XOR)
             {
@@ -145,11 +151,12 @@ namespace FuXi.Editor
             //覆盖 manifest 版本文件
             var manifestText = JsonUtility.ToJson(manifest, true);
             File.WriteAllText(manifestPath, manifestText);
-            //拷贝 manifest 版本管理文件
-            File.Copy(manifestPath, manifestDest, true);
             //覆盖 manifest hash 值文件
             var manifestHash = FxUtility.FileMd5(manifestPath);
             File.WriteAllText(versionFile, manifestHash);
+            
+            //拷贝 manifest 版本管理文件
+            File.Copy(manifestPath, manifestDest, true);
             //拷贝 manifest hash 值文件
             File.Copy(versionFile, versionDest, true);
 

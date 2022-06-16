@@ -88,6 +88,12 @@ namespace FuXi
             UnityEngine.Object.DontDestroyOnLoad(root);
         }
         
+        public static void ResetDownLoadURL(string url)
+        {
+            if (string.IsNullOrEmpty(url)) return;
+            PlatformURL = url;
+        }
+        
         #region Task 版本
         
         /// <summary>
