@@ -22,6 +22,7 @@ namespace FuXi.Editor
         private IEncrypt mEncrypt;
         private AssetBundleManifest manifest;
         private Dictionary<string, string> name2HashName;
+        private bool cancel;
         
         internal BuildBundleProcess(Fx_BuildAsset asset)
         {
@@ -97,7 +98,8 @@ namespace FuXi.Editor
                         var p = AssetDatabase.GUIDToAssetPath(guid).Replace("\\", "/");
                         
                         float progress = i / (float) count + j / (float) guids.Length;
-                        EditorUtility.DisplayProgressBar("Analysis Main Assets", p, progress);
+                        this.cancel = EditorUtility.DisplayCancelableProgressBar("Analysis Main Assets", p, progress);
+                        if (this.cancel) { throw new Exception("Cancel!!!");}
                         
                         if (AssetDatabase.IsValidFolder(p)) continue;
                         if (this.m_MainAssets.Contains(p)) continue;
@@ -121,8 +123,9 @@ namespace FuXi.Editor
             {
                 var asset = this.m_MainAssets[i];
                 float progress = i / (float) count;
-                EditorUtility.DisplayProgressBar("Analysis Dependencies Assets", asset, progress);
-
+                this.cancel = EditorUtility.DisplayCancelableProgressBar("Analysis Dependencies Assets", asset, progress);
+                if (this.cancel) { throw new Exception("Cancel!!!");}
+                
                 var dependencies = AssetDatabase.GetDependencies(asset);
                 foreach (var depFile in dependencies)
                 {
@@ -162,7 +165,7 @@ namespace FuXi.Editor
                 {
                     throw new Exception($"Bundle package name is repeated: {package.name}");
                 }
-                var bundlePackage = new BundlePackage() {PackageName = package.name, bundles = new List<string>()};
+                var bundlePackage = new BundlePackage() {packageName = package.name, bundles = new List<string>()};
                 if (package.PackageObjects == null) continue;
                 int length = package.PackageObjects.Count;
                 for (int j = 0; j < length; j++)
@@ -173,7 +176,9 @@ namespace FuXi.Editor
                         Debug.LogWarningFormat("package: '{0}' object reference is missing!!!", package.name);
                         continue;
                     }
-                    EditorUtility.DisplayProgressBar("Analysis Bundle Package", o.name, i / (float) count + j / (float) length);
+                    this.cancel = EditorUtility.DisplayCancelableProgressBar("Analysis Bundle Package", o.name, i / (float) count + j / (float) length);
+                    if (this.cancel) { throw new Exception("Cancel!!!");}
+                    
                     var assetPath = AssetDatabase.GetAssetPath(o);
                     if (AssetDatabase.IsValidFolder(assetPath))
                     {
@@ -215,6 +220,7 @@ namespace FuXi.Editor
         {
             if (this.m_BundleName2Builds.Count == 0) return;
             EditorUtility.DisplayProgressBar("Prepare build assetBundle", "waiting...", 1);
+            
             List<AssetBundleBuild> selects = new List<AssetBundleBuild>();
             foreach (var bundle in this.m_BundleName2Builds.Values)
             {
@@ -351,7 +357,7 @@ namespace FuXi.Editor
             for (int i = 0; i < pLength; i++)
             {
                 var package = this.m_Packages[i];
-                fxManifest.Packages[i].PackageName = package.PackageName;
+                fxManifest.Packages[i].PackageName = package.packageName;
                 fxManifest.Packages[i].Bundles = new int[package.bundles.Count];
                 for (int j = 0; j < package.bundles.Count; j++)
                 {
@@ -393,7 +399,7 @@ namespace FuXi.Editor
         {
             foreach (var package in this.m_Packages)
             {
-                if (package.PackageName == name) return true;
+                if (package.packageName == name) return true;
             }
             return false;
         }
@@ -474,7 +480,7 @@ namespace FuXi.Editor
         
         private struct BundlePackage
         {
-            internal string PackageName;
+            internal string packageName;
             internal List<string> bundles;
         }
     }
