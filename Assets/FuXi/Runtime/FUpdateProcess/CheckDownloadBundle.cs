@@ -25,6 +25,9 @@ namespace FuXi
         private readonly int m_MaxDownloadCount;
         private readonly long m_DownloadSize;
         private long m_CurDownloadSize;
+        
+        public string FormatDownloadSize => FxUtility.FormatBytes(this.m_DownloadSize);
+        public string FormatCurDownloadSize => FxUtility.FormatBytes(this.m_CurDownloadSize);
 
         internal CheckDownloadBundle(DownloadInfo downloadInfo, Action<float> checkDownload)
         {

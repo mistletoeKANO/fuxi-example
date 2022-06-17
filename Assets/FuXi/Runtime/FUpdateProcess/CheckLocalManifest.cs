@@ -33,7 +33,7 @@ namespace FuXi
             switch (this.m_Step)
             {
                 case CheckLocalMStep.CheckFile:
-                    var manifestPath = FxPathHelper.PersistentLoadURL(FxManager.ManifestVC.ManifestName);
+                    var manifestPath = FxPathHelper.PersistentLoadPath(FxManager.ManifestVC.ManifestName);
                     if (!System.IO.File.Exists(manifestPath))
                     {
                         manifestPath = FxPathHelper.StreamingLoadPath(FxManager.ManifestVC.ManifestName);
