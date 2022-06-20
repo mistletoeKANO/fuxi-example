@@ -8,6 +8,8 @@ namespace FuXi
     /// </summary>
     public class FxEncryptXor : IEncrypt
     {
+        protected override string EncryptHeader => "FxEncryptXOR";
+
         /// <summary>
         /// 加密序列
         /// </summary>

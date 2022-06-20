@@ -10,7 +10,11 @@ namespace FuXi.Editor
         public static readonly Texture2D Fx_AssetBlack = Resources.Load<Texture2D>("Gizmos/Fx_Asset Black");
         public static readonly Texture2D Fx_AssetPackage = Resources.Load<Texture2D>("Gizmos/Fx_AssetPackage");
 
+        public static readonly string Fx_CommonInspector_Uss = "Uss/Fx_CommonInspector";
         public static readonly string Fx_BuildAsset_Uss = "Uss/Fx_BuildAsset";
+        
+        public static readonly string Fx_Inspector_Margins = "fx-inspector-margins";
+        
         public static readonly string Fx_BuildAsset_Root_Class = "fx-buildAsset-root";
         public static readonly string Fx_BuildAsset_Main_Class = "fx-buildAsset-main";
         public static readonly string Fx_BuildAsset_Foot_Class = "fx-buildAsset-foot";

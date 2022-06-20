@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -116,18 +115,23 @@ namespace FuXi.Editor
                 FxBuildCache.DeletePlayer(setting.FxPlatform);
             }
         }
-        
+
+        public override bool UseDefaultMargins() { return false; }
 
         public override VisualElement CreateInspectorGUI()
         {
             this.m_Root = new VisualElement();
+            var commonStyle = Resources.Load<StyleSheet>(Fx_Style.Fx_CommonInspector_Uss);
+            if (commonStyle != null)
+            {
+                this.m_Root.styleSheets.Add(commonStyle);
+            }
             var mainStyle = Resources.Load<StyleSheet>(Fx_Style.Fx_BuildAsset_Uss);
             if (mainStyle != null)
             {
                 this.m_Root.styleSheets.Add(mainStyle);
             }
-
-            this.m_Root.AddToClassList(Fx_Style.Fx_BuildAsset_Root_Class);
+            this.m_Root.AddToClassList(Fx_Style.Fx_Inspector_Margins);
 
             IMGUIContainer imguiContainer = new IMGUIContainer(this.OnGUI);
             this.m_Root.Add(imguiContainer);
@@ -136,18 +140,8 @@ namespace FuXi.Editor
             IMGUIContainer footerContainer = new IMGUIContainer(this.OnFooterGUI);
             this.m_Root.Add(footerContainer);
             footerContainer.AddToClassList(Fx_Style.Fx_BuildAsset_Foot_Class);
-
-            System.Threading.Tasks.Task.Factory.StartNew(this.ResetParentStyle);
+            
             return this.m_Root;
-        }
-
-        private void ResetParentStyle()
-        {
-            this.m_Root.parent.RemoveFromClassList(InspectorElement.uIEInspectorVariantUssClassName);
-            this.m_Root.parent.style.paddingLeft = 0;
-            this.m_Root.parent.style.paddingRight = 0;
-            this.m_Root.parent.style.paddingTop = 0;
-            this.m_Root.parent.style.paddingBottom = 0;
         }
 
         private void OnGUI()
@@ -242,18 +236,12 @@ namespace FuXi.Editor
 
         private void DelayBuildBundle()
         {
-            using (IBuild pipeline = new BuildBundleProcess((Fx_BuildAsset) this.target))
-            {
-                pipeline.BeginBuild();
-            }
+            new BuildBundleProcess((Fx_BuildAsset) this.target).BeginBuild();
         }
         
         private void DelayBuildPlayer()
         {
-            using (IBuild pipeline = new BuildPlayerProcess((Fx_BuildAsset) this.target))
-            {
-                pipeline.BeginBuild();
-            }
+            new BuildPlayerProcess((Fx_BuildAsset) this.target).BeginBuild();
         }
     }
 }

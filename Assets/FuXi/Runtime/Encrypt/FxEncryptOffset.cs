@@ -6,6 +6,7 @@ namespace FuXi
     /// </summary>
     public class FxEncryptOffset : IEncrypt
     {
+        protected override string EncryptHeader => "FxEncryptOffset";
         /// <summary>
         /// 加密验证序列
         /// </summary>
@@ -16,7 +17,7 @@ namespace FuXi
         public override byte[] Encrypt(byte[] sourceBytes)
         {
             if (this.IsEncrypted(sourceBytes)) return sourceBytes;
-            byte[] header = System.Text.Encoding.Default.GetBytes(EncryptHeader);
+            byte[] header = System.Text.Encoding.UTF8.GetBytes(EncryptHeader);
             byte[] buffer = new byte[sourceBytes.Length + encryptBytes.Length + header.Length];
             
             header.CopyTo(buffer, 0);
@@ -31,7 +32,7 @@ namespace FuXi
         /// <returns></returns>
         public override byte[] EncryptOffset()
         {
-            byte[] header = System.Text.Encoding.Default.GetBytes(EncryptHeader);
+            byte[] header = System.Text.Encoding.UTF8.GetBytes(EncryptHeader);
             byte[] buffer = new byte[header.Length + encryptBytes.Length];
             header.CopyTo(buffer, 0);
             encryptBytes.CopyTo(buffer, header.Length);

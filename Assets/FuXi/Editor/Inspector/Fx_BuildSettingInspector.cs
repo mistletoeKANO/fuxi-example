@@ -1,5 +1,4 @@
 ﻿using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -56,36 +55,24 @@ namespace FuXi.Editor
                 }
             }
         }
-
+        public override bool UseDefaultMargins() { return false; }
         public override VisualElement CreateInspectorGUI()
         {
             this.m_Root = new VisualElement();
-            var mainStyle = Resources.Load<StyleSheet>(Fx_Style.Fx_BuildAsset_Uss);
-            if (mainStyle != null)
+            var commonStyle = Resources.Load<StyleSheet>(Fx_Style.Fx_CommonInspector_Uss);
+            if (commonStyle != null)
             {
-                this.m_Root.styleSheets.Add(mainStyle);
+                this.m_Root.styleSheets.Add(commonStyle);
             }
-            this.m_Root.AddToClassList(Fx_Style.Fx_BuildAsset_Root_Class);
+            this.m_Root.AddToClassList(Fx_Style.Fx_Inspector_Margins);
             
             IMGUIContainer imguiContainer = new IMGUIContainer(this.OnGUI);
             this.m_Root.Add(imguiContainer);
-            imguiContainer.AddToClassList(Fx_Style.Fx_BuildAsset_Main_Class);
-            
+
             IMGUIContainer footerContainer = new IMGUIContainer(this.OnFooterGUI);
             this.m_Root.Add(footerContainer);
-            footerContainer.AddToClassList(Fx_Style.Fx_BuildAsset_Foot_Class);
 
-            System.Threading.Tasks.Task.Factory.StartNew(this.ResetParentStyle);
             return this.m_Root;
-        }
-
-        private void ResetParentStyle()
-        {
-            this.m_Root.parent.RemoveFromClassList(InspectorElement.uIEInspectorVariantUssClassName);
-            this.m_Root.parent.style.paddingLeft = 0;
-            this.m_Root.parent.style.paddingRight = 0;
-            this.m_Root.parent.style.paddingTop = 0;
-            this.m_Root.parent.style.paddingBottom = 0;
         }
 
         private void OnGUI()
@@ -133,18 +120,12 @@ namespace FuXi.Editor
         private void DelayCopyBundle()
         {
             var fxAsset = AssetDatabase.LoadAssetAtPath<Fx_BuildAsset>(AssetDatabase.GetAssetPath(this.target));
-            using (BuildPlayerProcess pipeline = new BuildPlayerProcess(fxAsset))
-            {
-                pipeline.BeginCopyBundle();
-            }
+            new BuildPlayerProcess(fxAsset).BeginCopyBundle();
         }
         
         private void DelayClearBundle()
         {
-            using (BuildPlayerProcess pipeline = new BuildPlayerProcess())
-            {
-                pipeline.BeginClearStreamingAssets();
-            }
+            new BuildPlayerProcess().BeginClearStreamingAssets();
         }
     }
 }

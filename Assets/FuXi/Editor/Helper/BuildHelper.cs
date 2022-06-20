@@ -18,6 +18,22 @@ namespace FuXi.Editor
             return false;
         }
 
+        internal static Fx_BuildAsset GetBuildAsset(BuildPlateForm plateForm)
+        {
+            Fx_BuildAsset buildAsset = null;
+            var asGuids = AssetDatabase.FindAssets("t:" + typeof(Fx_BuildAsset).FullName);
+            foreach (var guid in asGuids)
+            {
+                var assetPath = AssetDatabase.GUIDToAssetPath(guid);
+                var buildSetting = AssetDatabase.LoadAssetAtPath<Fx_BuildSetting>(assetPath);
+                
+                if (buildSetting.FxPlatform != plateForm) continue;
+                buildAsset = AssetDatabase.LoadAssetAtPath<Fx_BuildAsset>(assetPath);
+                break;
+            }
+            return buildAsset;
+        }
+
         private static BuildPlateForm BuildPlatform2SettingPlatform()
         {
             switch (EditorUserBuildSettings.activeBuildTarget)

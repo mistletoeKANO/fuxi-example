@@ -13,7 +13,6 @@ namespace FuXi
             DownloadServerVersion,
             CheckServerVersion,
             DownloadServerManifest,
-            Failure,
         }
         
         private UnityWebRequestAsyncOperation m_AsyncOperation;
@@ -74,8 +73,7 @@ namespace FuXi
             this.m_UpdateProgress?.Invoke(this.progress);
             if (!this.m_AsyncOperation.isDone) return;
             
-            if (!string.IsNullOrEmpty(this.m_UnityWebRequest.error) 
-                || this.m_CurStep == CheckVersionSteps.Failure)
+            if (!string.IsNullOrEmpty(this.m_UnityWebRequest.error))
             {
                 if (this.m_CurRetryCount < this.m_RetryCount)
                 {
