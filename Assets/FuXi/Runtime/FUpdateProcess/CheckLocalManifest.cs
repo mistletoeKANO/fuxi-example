@@ -39,7 +39,7 @@ namespace FuXi
                         manifestPath = FxPathHelper.StreamingLoadPath(FxManager.ManifestVC.ManifestName);
                         manifestPath = FxPathHelper.ConvertToWWWPath(manifestPath);
                     }else
-                        manifestPath = FxPathHelper.PersistentLoadURL(FxManager.ManifestVC.ManifestName);
+                        manifestPath = FxPathHelper.PersistentLoadURL(manifestPath);
                     this.m_UrlOrPath = manifestPath;
                     this.m_Step = CheckLocalMStep.LoadFile;
                     break;

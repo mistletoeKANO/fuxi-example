@@ -1,7 +1,11 @@
+using System.Threading.Tasks;
+
 namespace FuXi
 {
     public class Downloader
     {
+        private TaskCompletionSource<bool> m_Tcs;
+        
         internal bool isDone;
         internal float progress;
         internal long DownloadSize => this.m_ThreadDownloader.m_DownloadedSize;
@@ -21,6 +25,14 @@ namespace FuXi
             FxDebug.ColorLog(FxDebug.ColorStyle.Green, "Download bundle {0}", this.m_BundleManifest.BundleHashName);
         }
 
+        internal Task StartDownloadAwait()
+        {
+            this.m_Tcs = new TaskCompletionSource<bool>();
+            this.m_ThreadDownloader.Start(this.m_BundleManifest);
+            FxDebug.ColorLog(FxDebug.ColorStyle.Green, "Download bundle {0}", this.m_BundleManifest.BundleHashName);
+            return this.m_Tcs.Task;
+        }
+
         internal void Update()
         {
             if (this.isDone) return;
@@ -29,6 +41,7 @@ namespace FuXi
             this.progress = this.m_ThreadDownloader.progress;
             
             this.isDone = this.m_ThreadDownloader.isDone;
+            this.m_Tcs?.SetResult(true);
         }
 
         internal void Dispose()

@@ -36,14 +36,16 @@ namespace FuXi
             {
                 if (immediate)
                 {
-                    FxDebug.ColorError(FxDebug.ColorStyle.Red, "Bundle {0} is not exist, cant load immediate!",
-                        this.m_BundleManifest.BundleHashName);
+                    this.m_Downloader = new Downloader(this.m_BundleManifest);
+                    this.m_Downloader.StartDownloadAwait().ConfigureAwait(false).GetAwaiter();
+                }
+                else
+                {
+                    this.m_Downloader = new Downloader(this.m_BundleManifest);
+                    this.m_Downloader.StartDownload();
+                    this.m_LoadStep = LoadStep.DownLoad;
                     return;
                 }
-                this.m_Downloader = new Downloader(this.m_BundleManifest);
-                this.m_Downloader.StartDownload();
-                this.m_LoadStep = LoadStep.DownLoad;
-                return;
             }
             if (immediate)
                 this.LoadBundleInternal();

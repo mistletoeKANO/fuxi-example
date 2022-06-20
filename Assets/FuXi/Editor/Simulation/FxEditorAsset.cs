@@ -14,8 +14,13 @@ namespace FuXi.Editor
         internal override Task<FxAsyncTask> Execute()
         {
             base.Execute();
-            if (FxManager.ManifestVC.TryGetAssetManifest(this.m_FilePath, out var _))
+            if (FxManager.ManifestVC == null)
                 this.asset = AssetDatabase.LoadAssetAtPath(this.m_FilePath, this.m_Type);
+            else
+            {
+                if (FxManager.ManifestVC.TryGetAssetManifest(this.m_FilePath, out var _))
+                    this.asset = AssetDatabase.LoadAssetAtPath(this.m_FilePath, this.m_Type);
+            }
             this.tcs.SetResult(this);
             this.isDone = true;
             return this.tcs.Task;

@@ -43,7 +43,7 @@ namespace FuXi
                 this.m_LocalVersion = FxPathHelper.StreamingLoadPath(FxManager.ManifestVC.VersionName);
                 this.m_LocalVersion = FxPathHelper.ConvertToWWWPath(this.m_LocalVersion);
             }else
-                this.m_LocalVersion = FxPathHelper.PersistentLoadURL(FxManager.ManifestVC.VersionName);
+                this.m_LocalVersion = FxPathHelper.PersistentLoadURL(this.m_LocalVersion);
             this.m_ServerVersion = $"{FxManager.PlatformURL}{FxManager.ManifestVC.VersionName}";
             this.m_ServerManifest = $"{FxManager.PlatformURL}{FxManager.ManifestVC.ManifestName}";
         }

@@ -8,13 +8,13 @@ namespace Game.HotFix
 {
     public class UIManager : Singleton<UIManager>
     {
-        private readonly string m_UIRootPath = "Assets/Example/BundleResource/Prefabs/Game/UIRoot.prefab";
+        private readonly string m_UIRootPath = "Assets/Example/BundleResource/Prefabs/Builtin/UIRoot.prefab";
         public Camera UICamera;
         private Transform[] m_Layers = new Transform[6];
         private readonly Dictionary<string, Object> m_Windows = new Dictionary<string, Object>();
         public async void Init()
         {
-            FxAsset fxAsset = await FxAsset.LoadAssetAsync<GameObject>(this.m_UIRootPath);
+            FxAsset fxAsset = await FxAsset.LoadAsync<GameObject>(this.m_UIRootPath);
             var mUIRoot = (GameObject) Object.Instantiate(fxAsset.asset);
             Object.DontDestroyOnLoad(mUIRoot);
             ObjectReference reference = mUIRoot.GetComponent<ObjectReference>();
@@ -33,7 +33,7 @@ namespace Game.HotFix
 
         public async Task<GameObject> OpenWindow(string path, UILayer uiLayer)
         {
-            FxAsset fxAsset = await FxAsset.LoadAssetAsync<GameObject>(path);
+            FxAsset fxAsset = await FxAsset.LoadAsync<GameObject>(path);
             var window = Object.Instantiate(fxAsset.asset, this.m_Layers[(int) uiLayer]);
             this.m_Windows.Add(path, window);
             return (GameObject) window;

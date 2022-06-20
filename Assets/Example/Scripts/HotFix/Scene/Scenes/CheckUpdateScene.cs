@@ -5,7 +5,7 @@ namespace Game.HotFix
 {
     public class CheckUpdateScene : SceneHandle
     {
-        private readonly string m_CheckUpdateFormPath = "Assets/Example/BundleResource/Prefabs/UI/Form/CheckUpdateForm.prefab";
+        private readonly string m_CheckUpdateFormPath = "Assets/Example/BundleResource/Prefabs/Builtin/CheckUpdateForm.prefab";
         public override async void Enter()
         {
             var window = await UIManager.Instance.OpenWindow(this.m_CheckUpdateFormPath, UILayer.Normal);
@@ -28,7 +28,7 @@ namespace Game.HotFix
             }
             UIManager.Instance.CloseWindow(this.m_CheckUpdateFormPath);
 
-            var json = await FxRawAsset.LoadRawAssetAsync("Assets/Example/BundleResource/Audios/encryptTest.json");
+            var json = await FxRawAsset.LoadAsync("Assets/Example/BundleResource/RawFile/encryptTest.json");
             GameDebugger.Log($"Raw asset : {json.Text}");
             
             SceneManager.Instance.SwitchScene<MainHomeScene>(SceneConfigs.MainHomeScene);

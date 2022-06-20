@@ -11,6 +11,7 @@ namespace FuXi
         {
             LoadBundle,
             LoadScene,
+            Finished
         }
         internal readonly string m_ScenePath;
         internal readonly LoadSceneMode m_LoadMode;
@@ -66,13 +67,19 @@ namespace FuXi
                         return;
                     }
                     this.m_Operation = SceneManager.LoadSceneAsync(this.m_ScenePath, this.m_LoadMode);
-                    this.m_LoadStep = LoadSceneSteps.LoadScene;
+                    if (this.m_Operation == null)
+                        this.m_LoadStep = LoadSceneSteps.Finished;
+                    else
+                        this.m_LoadStep = LoadSceneSteps.LoadScene;
                     break;
                 case LoadSceneSteps.LoadScene:
                     if (this.m_Operation.allowSceneActivation)
                         if (!this.m_Operation.isDone) return;
                     else
                         if (this.m_Operation.progress < 0.9f) return;
+                    this.m_LoadStep = LoadSceneSteps.Finished;
+                    break;
+                case LoadSceneSteps.Finished:
                     this.isDone = true;
                     this.tcs.SetResult(this);
                     break;

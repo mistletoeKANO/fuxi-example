@@ -69,7 +69,14 @@ namespace FuXi
             switch (Application.platform)
             {
                 case RuntimePlatform.Android:
-                    return $"file://{PersistentRootPath()}/{path}";
+                    return $"file://{path}";
+                case RuntimePlatform.WindowsPlayer:
+                case RuntimePlatform.WindowsEditor:
+                    return $"file:///{path}";
+                case RuntimePlatform.IPhonePlayer:
+                case RuntimePlatform.OSXPlayer:
+                case RuntimePlatform.OSXEditor:
+                    return $"file://{path}";
             }
             return path;
         }
