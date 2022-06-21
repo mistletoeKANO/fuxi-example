@@ -86,6 +86,11 @@ namespace FuXi.Editor
             genericMenu.AddItem(new GUIContent("D 清除下载缓存"), false, this.DeleteDownloadCache);
             genericMenu.AddItem(new GUIContent("D 清除AB包"), false, this.DeleteAssetBundle);
             genericMenu.AddItem(new GUIContent("D 清除安装包"), false, this.DeletePlayer);
+            genericMenu.AddSeparator("");
+            genericMenu.AddItem(new GUIContent("V 查看Bundle运行时引用"), false, () =>
+            {
+                EditorWindow.GetWindow<Fx_BundleReferenceWindow>(typeof(SceneView)).Show();
+            });
             genericMenu.ShowAsContext();
         }
 

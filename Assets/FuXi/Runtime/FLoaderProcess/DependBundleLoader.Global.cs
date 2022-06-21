@@ -4,7 +4,7 @@ namespace FuXi
 {
     public partial class DependBundleLoader
     {
-        private static readonly Dictionary<string, DependBundleLoader> UsedBundleDic = new Dictionary<string, DependBundleLoader>();
+        internal static readonly Dictionary<string, DependBundleLoader> UsedBundleDic = new Dictionary<string, DependBundleLoader>();
         private static readonly Queue<DependBundleLoader> UnUsedBundle = new Queue<DependBundleLoader>();
 
         internal static void UpdateUnUsed()
@@ -40,6 +40,12 @@ namespace FuXi
             var bundleLoader = UsedBundleDic[manifest.BundleHashName];
             UnUsedBundle.Enqueue(bundleLoader);
             UsedBundleDic.Remove(manifest.BundleHashName);
+        }
+
+        internal static void GameQuit()
+        {
+            UsedBundleDic.Clear();
+            UnUsedBundle.Clear();
         }
     }
 }

@@ -34,7 +34,7 @@ namespace FuXi.Editor
             }
             foreach (var o in Selection.objects)
             {
-                AssetDatabase.RemoveObjectFromAsset(o as Fx_BuildPackage);
+                AssetDatabase.RemoveObjectFromAsset(o);
             }
             AssetDatabase.SaveAssets();
         }

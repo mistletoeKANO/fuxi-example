@@ -22,6 +22,11 @@ namespace FuXi
             fxAsset.AddReference();
             return fxAsset;
         }
+
+        internal static void GameQuit()
+        {
+            AssetCache.Clear();
+        }
         
         /// <summary>
         /// 同步加载

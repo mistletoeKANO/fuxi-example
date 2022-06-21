@@ -21,6 +21,7 @@ namespace FuXi.Editor
                 if (FxManager.ManifestVC.TryGetAssetManifest(this.m_FilePath, out var _))
                     this.asset = AssetDatabase.LoadAssetAtPath(this.m_FilePath, this.m_Type);
             }
+            manifest = new AssetManifest() {Path = this.m_FilePath, HoldBundle = -1};
             this.tcs.SetResult(this);
             this.isDone = true;
             return this.tcs.Task;

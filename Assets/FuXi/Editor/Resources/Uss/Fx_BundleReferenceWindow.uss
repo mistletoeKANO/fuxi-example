@@ -1,0 +1,33 @@
+.bf-toolbar{
+    height: 21px;
+    border-top-width: 1px;
+}
+.bf-toolbar-enum{
+    width: 100px;
+}
+
+.bf-main-view{
+    flex-grow: 1;
+}
+.bf-main-view-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    background-image: resource("Fx_ReferenceView");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.bf-main-view-scroll-view{
+    flex-grow: 1;
+    background-color: rgba(0,0,0,0.46);
+}
+
+.bf-footer{
+    flex-grow: 1;
+    height: 21px;
+    max-height: 21px;
+    padding-left: 5px;
+    border-top-width: 1px;
+    border-color: rgba(1, 1, 1, 0.4);
+}

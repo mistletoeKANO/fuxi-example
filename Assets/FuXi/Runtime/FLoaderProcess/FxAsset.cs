@@ -14,13 +14,13 @@ namespace FuXi
             Finished,
         }
         private readonly bool m_LoadImmediate;
-        private readonly FxReference fxReference;
-        
         private BundleLoader m_BundleLoader;
         private AssetBundleRequest m_BundleRequest;
         private LoadSteps m_LoadStep;
         private Action<FxAsset> m_Completed;
 
+        internal readonly FxReference fxReference;
+        internal AssetManifest manifest;
         protected readonly string m_FilePath;
         protected readonly Type m_Type;
         public UnityEngine.Object asset;
@@ -39,11 +39,12 @@ namespace FuXi
             base.Execute();
             if (FxManager.RuntimeMode == RuntimeMode.Editor) return null;
 
-            if (!FxManager.ManifestVC.TryGetAssetManifest(this.m_FilePath, out var manifest))
+            if (!FxManager.ManifestVC.TryGetAssetManifest(this.m_FilePath, out this.manifest))
             {
                 this.tcs.SetResult(this);
                 this.isDone = true;
                 this.m_Completed?.Invoke(this);
+                AssetCache.Remove(this.m_FilePath);
                 return this.tcs.Task;
             }
             this.m_BundleLoader.StartLoad(manifest, this.m_LoadImmediate);

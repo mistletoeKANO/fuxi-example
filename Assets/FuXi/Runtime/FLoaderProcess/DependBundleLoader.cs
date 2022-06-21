@@ -15,6 +15,7 @@ namespace FuXi
         internal bool isDone;
         internal AssetBundle assetBundle;
         internal FxReference fxReference;
+        internal long size => this.m_BundleManifest.Size;
 
         private string m_PathOrURL;
         private AssetBundleCreateRequest m_BundleRequest;

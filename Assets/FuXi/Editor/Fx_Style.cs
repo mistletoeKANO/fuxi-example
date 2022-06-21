@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 namespace FuXi.Editor
 {
@@ -18,5 +19,22 @@ namespace FuXi.Editor
         public static readonly string Fx_BuildAsset_Root_Class = "fx-buildAsset-root";
         public static readonly string Fx_BuildAsset_Main_Class = "fx-buildAsset-main";
         public static readonly string Fx_BuildAsset_Foot_Class = "fx-buildAsset-foot";
+        
+        internal static readonly GUIContent Title = new GUIContent("引用分析", Resources.Load<Texture2D>("Gizmos/Fx_Asset Black"));
+        internal static readonly GUIContent PrefabIcon = EditorGUIUtility.IconContent("d_Prefab Icon");
+        internal static readonly GUIContent BundleIcon = EditorGUIUtility.IconContent("d_ScriptableObject Icon");
+            
+        internal static readonly GUIStyle ByteStyle = new GUIStyle
+            {alignment = TextAnchor.MiddleRight, normal = {textColor = new Color(1f, 0.42f, 0.1f)}};
+            
+        internal static readonly string CName_BF_Toolbar = "bf-toolbar";
+        internal static readonly string CName_BF_Toolbar_Enum = "bf-toolbar-enum";
+        internal static readonly string CName_BF_MainView = "bf-main-view";
+        internal static readonly string CName_BF_MainView_BG = "bf-main-view-bg";
+        internal static readonly string CName_BF_MainView_ScrollView = "bf-main-view-scroll-view";
+        internal static readonly string CName_BF_Footer = "bf-footer";
+
+        internal static readonly Color C_ColumnDark = new Color(0.16f, 0.16f, 0.16f, 0.6f);
+        internal static readonly Color C_ColumnLight = new Color(0.25f, 0.25f, 0.25f, 0.6f);
     }
 }

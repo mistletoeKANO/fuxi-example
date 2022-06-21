@@ -34,6 +34,22 @@ namespace FuXi
             return size;
         }
 
+        internal static Tuple<string, string> FormatByteTuple(long bytes)
+        {
+            var size = new Tuple<string, string>("0", "B");
+            if (bytes == 0) return size;
+            for (var index = 0; index < byteUnits.Length; index++)
+            {
+                var unit = byteUnits[index];
+                if (bytes >= unit)
+                {
+                    size = new Tuple<string, string>($"{bytes / unit:##.##}", $"{byteUnitsNames[index]}");
+                    break;
+                }
+            }
+            return size;
+        }
+
         internal static string FileName(string path)
         {
             path = path.Replace("\\", "/");
