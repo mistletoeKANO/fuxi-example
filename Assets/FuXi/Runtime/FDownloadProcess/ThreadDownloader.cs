@@ -21,7 +21,9 @@ namespace FuXi
         
         private long m_MaxSize;
         private string m_Crc;
+        private int m_RetryCount;
 
+        internal string error;
         internal bool isDone = false;
         internal float progress = 0f;
         internal long m_DownloadedSize;
@@ -37,7 +39,13 @@ namespace FuXi
             this.m_Crc = manifest.CRC;
             this.m_MaxSize = manifest.Size;
             this.m_DownloadedSize = 0;
+            this.m_RetryCount = 2;
 
+            this.StartThread();
+        }
+
+        private void StartThread()
+        {
             this.isDone = false;
             this.m_Running = true;
             this.m_Thread = new Thread(this.RunThread) {IsBackground = true};
@@ -59,14 +67,8 @@ namespace FuXi
                 webResponse = webRequest.GetResponse();
                 respStream = webResponse.GetResponseStream();
 
-                if (respStream == null)
-                {
-                    this.Context.Post(this.ThrowDownloadError, $"GetResponseStream failure in {this.m_URL} to {0}");
-                    return;
-                }
-
                 byte[] buffer = new byte[m_BufferSize];
-                while (this.m_Running)
+                while (this.m_Running && respStream != null)
                 {
                     int readLength = respStream.Read(buffer, 0, buffer.Length);
                     if (readLength <= 0) break;
@@ -79,6 +81,7 @@ namespace FuXi
             catch (Exception e)
             {
                 this.Context.Post(this.ThrowDownloadError, string.Concat($"文件下载出错:{e.Message}", "{0}"));
+                this.error = e.Message;
             }
             finally
             {
@@ -90,8 +93,17 @@ namespace FuXi
                 
                 fileStream?.Close();
                 fileStream?.Dispose();
-                this.CheckDownloadedFileValid();
-                this.isDone = true;
+                if (!string.IsNullOrEmpty(this.error) && this.m_RetryCount > 0)
+                {
+                    Thread.Sleep(1000);
+                    this.m_RetryCount--;
+                    this.StartThread();
+                }
+                else
+                {
+                    this.CheckDownloadedFileValid();
+                    this.isDone = true;
+                }
             }
         }
 
@@ -147,7 +159,7 @@ namespace FuXi
             {
                 ServicePointManager.ServerCertificateValidationCallback = CheckValidationResult;
             }
-            
+
             var httpRequest = (HttpWebRequest) WebRequest.Create(this.m_URL);
             httpRequest.ProtocolVersion = HttpVersion.Version10;
             if (offset > 0) httpRequest.AddRange(offset);
