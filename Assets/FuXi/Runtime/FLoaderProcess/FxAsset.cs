@@ -21,6 +21,11 @@ namespace FuXi
 
         internal readonly FxReference fxReference;
         internal AssetManifest manifest;
+        
+#if UNITY_EDITOR
+        internal string stackInfo;
+#endif
+        
         protected readonly string m_FilePath;
         protected readonly Type m_Type;
         public UnityEngine.Object asset;
@@ -38,7 +43,9 @@ namespace FuXi
         {
             base.Execute();
             if (FxManager.RuntimeMode == RuntimeMode.Editor) return null;
-
+#if UNITY_EDITOR
+            this.stackInfo = StackTraceUtility.ExtractStackTrace();
+#endif
             if (!FxManager.ManifestVC.TryGetAssetManifest(this.m_FilePath, out this.manifest))
             {
                 this.tcs.SetResult(this);

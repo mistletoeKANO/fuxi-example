@@ -63,20 +63,14 @@ namespace FuXi.Editor
         {
             var selectAsset = Selection.activeObject as Fx_BuildAsset;
             if (selectAsset == null) return false;
-            
-            var openedWindows = Resources.FindObjectsOfTypeAll(typeof(Fx_AssetWindow));
-            foreach (var w in openedWindows)
+            var openedWindows = Resources.FindObjectsOfTypeAll(typeof(Fx_BundleReferenceWindow));
+            if (openedWindows.Length > 0)
             {
-                var fw = (Fx_AssetWindow) w;
-                if (fw.mBuildAsset == selectAsset)
-                {
-                    fw.Focus(); return true;
-                }
+                ((EditorWindow)openedWindows[0]).Focus();
+                return true;
             }
-            
-            var window = EditorWindow.CreateWindow<Fx_AssetWindow>(typeof(SceneView));
-            window.titleContent = new GUIContent(selectAsset.name, Fx_Style.Fx_AssetBlack);
-            window.OpenWindow(selectAsset);
+            var window = EditorWindow.CreateWindow<Fx_BundleReferenceWindow>();
+            window.Focus();
             return true;
         }
     }

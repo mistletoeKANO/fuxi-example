@@ -1,6 +1,5 @@
 using System.IO;
 using UnityEngine;
-using UnityEngine.Networking;
 
 // ReSharper disable once CheckNamespace
 namespace FuXi
@@ -14,7 +13,7 @@ namespace FuXi
         }
         internal bool isDone;
         internal AssetBundle assetBundle;
-        internal FxReference fxReference;
+        internal readonly FxReference fxReference;
         internal long size => this.m_BundleManifest.Size;
 
         private string m_PathOrURL;

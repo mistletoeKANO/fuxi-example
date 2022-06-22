@@ -6,7 +6,7 @@ namespace FuXi
 {
     public partial class FxAsset
     {
-        internal static readonly Dictionary<string, FxAsset> AssetCache = new Dictionary<string, FxAsset>();
+        internal static Dictionary<string, FxAsset> AssetCache = new Dictionary<string, FxAsset>();
         internal static Func<string, Type, bool, Action<FxAsset>, FxAsset> FxAssetCreate;
         
         internal static FxAsset CreateAsset(string path, Type type, bool immediate, Action<FxAsset> callback)

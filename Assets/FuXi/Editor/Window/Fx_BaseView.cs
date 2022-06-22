@@ -13,6 +13,8 @@ namespace FuXi.Editor
         
         protected float m_ColumnHeadWidth = 0f;
         protected Vector2 m_ScrollPos = Vector2.zero;
+        protected Rect m_LastRect;
+        protected bool m_IsDrawHeader = false;
         
         public abstract void Dispose();
     }

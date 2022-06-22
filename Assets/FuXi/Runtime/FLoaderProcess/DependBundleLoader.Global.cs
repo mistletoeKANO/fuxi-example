@@ -4,7 +4,7 @@ namespace FuXi
 {
     public partial class DependBundleLoader
     {
-        internal static readonly Dictionary<string, DependBundleLoader> UsedBundleDic = new Dictionary<string, DependBundleLoader>();
+        internal static Dictionary<string, DependBundleLoader> UsedBundleDic = new Dictionary<string, DependBundleLoader>();
         private static readonly Queue<DependBundleLoader> UnUsedBundle = new Queue<DependBundleLoader>();
 
         internal static void UpdateUnUsed()

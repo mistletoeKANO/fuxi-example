@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
@@ -24,8 +25,8 @@ namespace FuXi.Editor
                 new MultiColumnHeaderState.Column
                 {
                     headerContent = new GUIContent("Bundle Name"),
-                    minWidth = 240,
-                    width = 320,
+                    minWidth = 160,
+                    width = 160,
                 },
                 new MultiColumnHeaderState.Column
                 {
@@ -43,21 +44,59 @@ namespace FuXi.Editor
             this.m_MultiColumnHeaderState = new MultiColumnHeaderState(this.m_Columns);
             this.m_MultiColumnHeader = new MultiColumnHeader(this.m_MultiColumnHeaderState);
             this.m_MultiColumnHeader.visibleColumnsChanged += header => { header.ResizeToFit(); };
+            this.m_MultiColumnHeader.sortingChanged += this.SortColumn;
             this.m_MultiColumnHeader.ResizeToFit();
         }
 
-        internal void OnGUI(Rect windowRect)
+        private void SortColumn(MultiColumnHeader header)
+        {
+            IOrderedEnumerable<KeyValuePair<string, DependBundleLoader>> sortedDic = null;
+            if (header.sortedColumnIndex == 1)
+            {
+                sortedDic = header.IsSortedAscending(header.sortedColumnIndex)
+                    ? FuXi.DependBundleLoader.UsedBundleDic.OrderBy(c => c.Key)
+                    : FuXi.DependBundleLoader.UsedBundleDic.OrderByDescending(c => c.Key);
+            }
+            else if (header.sortedColumnIndex == 2)
+            {
+                sortedDic = header.IsSortedAscending(header.sortedColumnIndex)
+                    ? FuXi.DependBundleLoader.UsedBundleDic.OrderBy(c => c.Value.fxReference.RefCount)
+                    : FuXi.DependBundleLoader.UsedBundleDic.OrderByDescending(c => c.Key);
+            }
+            else if (header.sortedColumnIndex == 3)
+            {
+                sortedDic = header.IsSortedAscending(header.sortedColumnIndex)
+                    ? FuXi.DependBundleLoader.UsedBundleDic.OrderBy(c => c.Value.size)
+                    : FuXi.DependBundleLoader.UsedBundleDic.OrderByDescending(c => c.Key);
+            }
+            FuXi.DependBundleLoader.UsedBundleDic = sortedDic?
+                .ToDictionary(c => c.Key, c => c.Value);
+        }
+
+        internal void OnHeader(Rect windowRect)
         {
             Rect posRect = GUILayoutUtility.GetRect(0, float.MaxValue, 0, float.MaxValue);
-            Rect viewRect = new Rect(windowRect) {xMax = this.m_Columns.Sum(c => c.width)};
-            
             this.m_ColumnHeadWidth = Mathf.Max(posRect.width + this.m_ScrollPos.x, this.m_ColumnHeadWidth);
             Rect columnRect = new Rect(posRect) {width = this.m_ColumnHeadWidth, height = columnHeight};
             this.m_MultiColumnHeader.OnGUI(columnRect, this.m_ScrollPos.x);
+            this.m_LastRect = new Rect(windowRect);
+            this.m_IsDrawHeader = true;
+        }
+
+        internal void OnGUI()
+        {
+            if (!this.m_IsDrawHeader) return;
+            var bundleDic = FuXi.DependBundleLoader.UsedBundleDic;
+            Rect posRect = GUILayoutUtility.GetRect(0, float.MaxValue, 0, float.MaxValue);
+            Rect viewRect = new Rect(this.m_LastRect)
+            {
+                xMax = this.m_Columns.Sum(c => c.width),
+                yMax = bundleDic.Sum(c=> columnHeight)
+            };
+            Rect columnRect = new Rect(posRect) {width = this.m_ColumnHeadWidth, height = columnHeight};
             this.m_ScrollPos = GUI.BeginScrollView(posRect, this.m_ScrollPos, viewRect, false, false);
             int index = 0;
-            int mMaxHeight = columnHeight;
-            var bundleDic = FuXi.DependBundleLoader.UsedBundleDic;
+            int mMaxHeight = 0;
             foreach (var bundle in bundleDic)
             {
                 Rect rowRect = new Rect(columnRect);
@@ -101,12 +140,8 @@ namespace FuXi.Editor
                 mMaxHeight += columnHeight;
             }
             GUI.EndScrollView(true);
-            this.m_MultiColumnHeader.OnGUI(columnRect, this.m_ScrollPos.x);
         }
 
-        public override void Dispose()
-        {
-            
-        }
+        public override void Dispose() { }
     }
 }

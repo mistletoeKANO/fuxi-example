@@ -23,16 +23,27 @@ namespace FuXi.Editor
         internal static readonly GUIContent Title = new GUIContent("引用分析", Resources.Load<Texture2D>("Gizmos/Fx_Asset Black"));
         internal static readonly GUIContent PrefabIcon = EditorGUIUtility.IconContent("d_Prefab Icon");
         internal static readonly GUIContent BundleIcon = EditorGUIUtility.IconContent("d_ScriptableObject Icon");
-            
+        internal static readonly GUIContent PinButton = EditorGUIUtility.IconContent("d__Help@2x");
+        
         internal static readonly GUIStyle ByteStyle = new GUIStyle
             {alignment = TextAnchor.MiddleRight, normal = {textColor = new Color(1f, 0.42f, 0.1f)}};
-            
+
+        internal static readonly GUIStyle FooterLabelInfo = new GUIStyle
+        {
+            margin = new RectOffset(18,0,0,0),
+            normal = new GUIStyleState{textColor = Color.gray}
+        };
+
         internal static readonly string CName_BF_Toolbar = "bf-toolbar";
         internal static readonly string CName_BF_Toolbar_Enum = "bf-toolbar-enum";
+        internal static readonly string CName_BF_MainView_Header = "bf-main-view-header";
         internal static readonly string CName_BF_MainView = "bf-main-view";
         internal static readonly string CName_BF_MainView_BG = "bf-main-view-bg";
         internal static readonly string CName_BF_MainView_ScrollView = "bf-main-view-scroll-view";
         internal static readonly string CName_BF_Footer = "bf-footer";
+        internal static readonly string CName_BF_Footer_Header = "bf-footer-header";
+        internal static readonly string CName_BF_Footer_Label = "bf-footer-label";
+        internal static readonly string CName_BF_Footer_View = "bf-footer-view";
 
         internal static readonly Color C_ColumnDark = new Color(0.16f, 0.16f, 0.16f, 0.6f);
         internal static readonly Color C_ColumnLight = new Color(0.25f, 0.25f, 0.25f, 0.6f);
