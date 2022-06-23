@@ -10,7 +10,7 @@
 }
 
 #GraphView{
-    border-width: 1;
+    border-width: 1px;
     border-color: black;
     margin: 10px;
     padding-top: 10px;
