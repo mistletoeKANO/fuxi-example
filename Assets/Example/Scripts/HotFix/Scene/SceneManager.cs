@@ -18,7 +18,7 @@ namespace Game.HotFix
         public async void SwitchScene<T>(string scenePath, bool additive = false) where T : SceneHandle
         {
             if (this.m_Current != null && this.m_Current.GetType() == typeof(T)) return;
-            await FxScene.LoadSceneAsync(scenePath, additive);
+            await FxScene.LoadSceneAsync(scenePath, additive, f=>{Debug.Log(f);});
             this.m_Current?.Exist();
             this.m_Current = Activator.CreateInstance<T>();
             this.m_Current.Enter();
