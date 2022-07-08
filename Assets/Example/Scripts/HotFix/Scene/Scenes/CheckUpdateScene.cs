@@ -11,18 +11,18 @@ namespace Game.HotFix
             var window = await UIManager.Instance.OpenWindow(this.m_CheckUpdateFormPath, UILayer.Normal);
             CheckUpdateForm form = window.GetComponent<CheckUpdateForm>();
             
-            await FxManager.FxCheckUpdate(f =>
+            await FuXiManager.FxCheckUpdate(f =>
             {
                 form.UpdateHandle(0, $"检查更新:{f}");
             });
 
-            var download = await FxManager.FxCheckDownloadSize(true);
+            var download = await FuXiManager.FxCheckDownloadSize(true);
             if (download.DownloadSize > 0)
             {
                 GameDebugger.Log($"检测到版本变更, 大小:{download.FormatSize}");
-                await FxManager.FxCheckDownload(download, a =>
+                await FuXiManager.FxCheckDownload(download, a =>
                 {
-                    form.UpdateHandle(a,$"正在下载: {a}");
+                    form.UpdateHandle(a.progress,$"正在下载: {a.FormatDownloadSize}");
                 });
                 GameDebugger.Log("下载完成!");
             }

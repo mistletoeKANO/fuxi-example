@@ -8,7 +8,7 @@ namespace FuXi
     /// <summary>
     /// 伏羲 资源管理器
     /// </summary>
-    public static class FxManager
+    public static class FuXiManager
     {
         public   static RuntimeMode RuntimeMode = RuntimeMode.Editor;
         
@@ -29,10 +29,10 @@ namespace FuXi
             RuntimeMode runtimeMode = RuntimeMode.Editor)
         {
             InitInternal(versionFileName, url, runtimeMode);
-            if (FxManager.RuntimeMode == RuntimeMode.Editor)
+            if (FuXiManager.RuntimeMode == RuntimeMode.Editor)
             {
-                FxManager.ManifestVC.NewManifest = ParseManifestCallback?.Invoke();
-                FxManager.ManifestVC.InitEncrypt();
+                FuXiManager.ManifestVC.NewManifest = ParseManifestCallback?.Invoke();
+                FuXiManager.ManifestVC.InitEncrypt();
             }
             else
             {
@@ -50,10 +50,10 @@ namespace FuXi
         {
             CheckLocalManifest check = null;
             InitInternal(versionFileName, url, runtimeMode);
-            if (FxManager.RuntimeMode == RuntimeMode.Editor)
+            if (FuXiManager.RuntimeMode == RuntimeMode.Editor)
             {
-                FxManager.ManifestVC.NewManifest = ParseManifestCallback?.Invoke();
-                FxManager.ManifestVC.InitEncrypt();
+                FuXiManager.ManifestVC.NewManifest = ParseManifestCallback?.Invoke();
+                FuXiManager.ManifestVC.InitEncrypt();
                 check = new CheckLocalManifest{isDone = true};
             }
             else
@@ -72,12 +72,12 @@ namespace FuXi
             string url,
             RuntimeMode runtimeMode)
         {
-            FxManager.ManifestVC = new FxManifestDriver(versionFileName);
-            FxManager.PlatformURL = url;
-            FxManager.RuntimeMode = runtimeMode;
-            if (FxManager.RuntimeMode == RuntimeMode.Editor && !Application.isEditor)
+            FuXiManager.ManifestVC = new FxManifestDriver(versionFileName);
+            FuXiManager.PlatformURL = url;
+            FuXiManager.RuntimeMode = runtimeMode;
+            if (FuXiManager.RuntimeMode == RuntimeMode.Editor && !Application.isEditor)
             {
-                FxManager.RuntimeMode = RuntimeMode.Offline;
+                FuXiManager.RuntimeMode = RuntimeMode.Offline;
             }
             var root = GameObject.Find("__FuXi Asset Manager__");
             if (root == null)
@@ -103,7 +103,7 @@ namespace FuXi
         /// <returns></returns>
         public static async Task FxCheckUpdate(Action<float> checkUpdate = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return;
+            if (FuXiManager.RuntimeMode != RuntimeMode.Runtime) return;
             await new CheckWWWManifest(checkUpdate).Execute();
             FxDebug.Log("Check update finished!");
         }
@@ -116,7 +116,7 @@ namespace FuXi
         /// <returns></returns>
         public static async Task<DownloadInfo> FxCheckDownloadSize(string[] packages, Action<float> checkDownload = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return default;
+            if (FuXiManager.RuntimeMode != RuntimeMode.Runtime) return default;
             CheckDownloadSize c = (CheckDownloadSize) await new CheckDownloadSize(packages, checkDownload).Execute();
             return c.DownloadInfo;
         }
@@ -129,7 +129,7 @@ namespace FuXi
         /// <returns></returns>
         public static async Task<DownloadInfo> FxCheckDownloadSize(bool containsPackage = false, Action<float> checkDownload = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return default;
+            if (FuXiManager.RuntimeMode != RuntimeMode.Runtime) return default;
             CheckDownloadSize c = (CheckDownloadSize) await new CheckDownloadSize(containsPackage, checkDownload).Execute();
             return c.DownloadInfo;
         }
@@ -140,9 +140,9 @@ namespace FuXi
         /// <param name="downloadInfo"></param>
         /// <param name="checkDownload"></param>
         /// <returns></returns>
-        public static async Task FxCheckDownload(DownloadInfo downloadInfo, Action<float> checkDownload = null)
+        public static async Task FxCheckDownload(DownloadInfo downloadInfo, Action<CheckDownloadBundle> checkDownload = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return;
+            if (FuXiManager.RuntimeMode != RuntimeMode.Runtime) return;
             await new CheckDownloadBundle(downloadInfo, checkDownload).Execute();
         }
 
@@ -157,7 +157,7 @@ namespace FuXi
         /// <returns></returns>
         public static CheckWWWManifest FxCheckUpdateCo(Action<float> checkUpdate = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return default;
+            if (FuXiManager.RuntimeMode != RuntimeMode.Runtime) return default;
             var check = new CheckWWWManifest(checkUpdate);
             check.Execute();
             return check;
@@ -171,7 +171,7 @@ namespace FuXi
         /// <returns></returns>
         public static CheckDownloadSize FxCheckDownloadSizeCo(string[] packages, Action<float> checkDownload = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return default;
+            if (FuXiManager.RuntimeMode != RuntimeMode.Runtime) return default;
             var check = new CheckDownloadSize(packages, checkDownload);
             check.Execute();
             return check;
@@ -185,7 +185,7 @@ namespace FuXi
         /// <returns></returns>
         public static CheckDownloadSize FxCheckDownloadSizeCo(bool containsPackage = false, Action<float> checkDownload = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime) return new CheckDownloadSize {isDone = true};
+            if (FuXiManager.RuntimeMode != RuntimeMode.Runtime) return new CheckDownloadSize {isDone = true};
             var check = new CheckDownloadSize(containsPackage, checkDownload);
             check.Execute();
             return check;
@@ -197,9 +197,9 @@ namespace FuXi
         /// <param name="downloadInfo"></param>
         /// <param name="checkDownload"></param>
         /// <returns></returns>
-        public static CheckDownloadBundle FxCheckDownloadCo(DownloadInfo downloadInfo, Action<float> checkDownload = null)
+        public static CheckDownloadBundle FxCheckDownloadCo(DownloadInfo downloadInfo, Action<CheckDownloadBundle> checkDownload = null)
         {
-            if (FxManager.RuntimeMode != RuntimeMode.Runtime)
+            if (FuXiManager.RuntimeMode != RuntimeMode.Runtime)
                 return new CheckDownloadBundle(default, null) {isDone = true};
             var check = new CheckDownloadBundle(downloadInfo, checkDownload);
             check.Execute();
