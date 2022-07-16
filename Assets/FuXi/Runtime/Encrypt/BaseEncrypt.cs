@@ -1,7 +1,7 @@
 // ReSharper disable once CheckNamespace
 namespace FuXi
 {
-    public abstract class IEncrypt
+    public abstract class BaseEncrypt
     {
         /// <summary>
         /// 加密头

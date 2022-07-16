@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using FuXi;
 using Game.HotFix;
 using UnityEngine;
@@ -43,8 +41,8 @@ namespace Builtin
 
         private async void Start()
         {
-            await FxManager.FxLauncherAsync("FuXiAssetWindow", "http://192.168.1.2/Windows/", RuntimeMode);
-            
+            await FuXiManager.FxLauncherAsync("FuXiAssetWindow", "http://192.168.1.2/Windows/", RuntimeMode);
+            GameDebugger.Log("LauncherFinished!");
             SceneManager.Instance.Init();
             UIManager.Instance.Init();
             

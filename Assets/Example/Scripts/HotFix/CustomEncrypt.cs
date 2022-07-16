@@ -2,7 +2,7 @@
 
 namespace NewBi
 {
-    public class NewBiEncrypt : FuXi.IEncrypt
+    public class NewBiEncrypt : FuXi.BaseEncrypt
     {
         public override byte[] Encrypt(byte[] sourceBytes)
         {
@@ -22,7 +22,7 @@ namespace NewBi
     }
 }
 
-public class CustomEncrypt : FuXi.IEncrypt
+public class CustomEncrypt : FuXi.BaseEncrypt
 {
     public override byte[] Encrypt(byte[] sourceBytes)
     {
