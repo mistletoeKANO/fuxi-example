@@ -28,7 +28,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b6c21043e1445fbb62f910f69c62d4, type: 3}
   m_Name: FuXi Asset Window
   m_EditorClassIdentifier: 
-  bundleVersion: 1
+  bundleVersion: 3
   playerVersion: 1.0
   buildAssetBundleOptions: 256
   fx_Objects:
@@ -46,6 +46,8 @@ MonoBehaviour:
     folder: {fileID: 102900000, guid: 9d2c1c82a815b504695f9a36fe6815a4, type: 3}
   - bundleMode: 4
     folder: {fileID: 102900000, guid: a4856af41406fc6429e54cfc3f08412b, type: 3}
+  - bundleMode: 0
+    folder: {fileID: 102900000, guid: bdb4a8b759773f44f953c66596b2bc42, type: 3}
 --- !u!114 &1203720248362945530
 MonoBehaviour:
   m_ObjectHideFlags: 0

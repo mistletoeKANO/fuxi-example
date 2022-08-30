@@ -1,0 +1,18 @@
+{
+    "name": "OdinExtension.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:16c5644acbce37a48ac03f56fd0e6a5f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

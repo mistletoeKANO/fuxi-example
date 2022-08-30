@@ -1,5 +1,4 @@
 using FuXi;
-using Game.HotFix;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
@@ -9,44 +8,34 @@ namespace Builtin
     {
         public RuntimeMode RuntimeMode;
 
-        // private IEnumerator Start()
-        // {
-        //     yield return FxManager.FxLauncherAsyncCo("FuXiAssetWindow", "http://192.168.1.2/Windows/", RuntimeMode);
-        //
-        //     yield return FxManager.FxCheckUpdateCo();
-        //
-        //     var checkSize = FxManager.FxCheckDownloadSizeCo();
-        //     yield return checkSize;
-        //
-        //     if (checkSize.DownloadInfo.DownloadSize > 0)
-        //     {
-        //         GameDebugger.Log($"下载大小{checkSize.DownloadInfo.FormatSize}");
-        //         yield return FxManager.FxCheckDownloadCo(checkSize.DownloadInfo);
-        //         GameDebugger.Log("下载完成");
-        //     }else GameDebugger.Log("未检测到更新内容!");
-        //
-        //     var uiRoot = FxAsset.LoadAssetCo("Assets/Example/BundleResource/Prefabs/Game/UIRoot.prefab", typeof(GameObject));
-        //     yield return uiRoot;
-        //     UnityEngine.Object.Instantiate(uiRoot.asset);
-        //     
-        //     // FxAsset.LoadAssetAsync("Assets/Example/BundleResource/Prefabs/Game/UIRoot.prefab", typeof(GameObject), f =>
-        //     // {
-        //     //     UnityEngine.Object.Instantiate(f.asset);
-        //     // });
-        //     uiRoot.Release();
-        //     
-        //     SceneManager.Instance.SwitchScene<CheckUpdateScene>(SceneConfigs.CheckUpdateScene);
-        //     
-        // }
+#if UNITY_EDITOR
+        private string VersionFile = "FuXiAssetWindow";
+#else
+        private string VersionFile = "FuXiAssetAndroid";
+#endif
+
+        private void Awake()
+        {
+            System.AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
+            {
+                Debugger.LogError(e.ExceptionObject.ToString());
+            };
+        }
+        
+        private void InitFxLOGInformation()
+        {
+            FuXi.FX_LOG_CONTROL.LogLevel = FX_LOG_TYPE.ERROR;
+        }
 
         private async void Start()
         {
-            await FuXiManager.FxLauncherAsync("FuXiAssetWindow", "http://192.168.1.2/Windows/", RuntimeMode);
-            GameDebugger.Log("LauncherFinished!");
-            SceneManager.Instance.Init();
-            UIManager.Instance.Init();
+            InitFxLOGInformation();
             
-            SceneManager.Instance.SwitchScene<CheckUpdateScene>(SceneConfigs.CheckUpdateScene);
+            await FuXiManager.FxLauncherAsync(VersionFile, "http://192.168.1.2/Windows/", RuntimeMode, typeof(FxEncryptOffset));
+
+            await new CheckUpdater().Start();
+            
+            AppStart.Start();
         }
     }
 }

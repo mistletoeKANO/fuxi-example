@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281e76e598c6432aa844a89f225cb975, type: 3}
+  m_Name: PrefabCsRule
+  m_EditorClassIdentifier: 
+  bindTemplate: "\r/// <Summary>\n/// \u5F53\u524D\u811A\u672C\u7531\u5DE5\u5177\u81EA\u52A8\u751F\u6210\uFF0C\u8BF7\u52FF\u624B\u52A8\u4FEE\u6539!!!\n///
+    </summary>\n[Path(\"#PrefabPath#\")]\npublic sealed class #PrefabName#View :
+    BaseView\r\n{\r\n#ComponentField#\n    \n    public override void FindAndSaveComponents()\r\n   
+    {\r\n        if (target == null) return;\r\n#ComponentBinder#\n    }\r\n}"
+  itemBindTemplate: "/************************************\r\n * \u5F53\u524D\u811A\u672C\u7531\u5DE5\u5177\u81EA\u52A8\u751F\u6210\uFF0C\u8BF7\u52FF\u624B\u52A8\u4FEE\u6539!!!\r\n***********************************/\n\r\npublic
+    class #PrefabName# : BaseItemView\r\n{\r\n#ComponentField#\n\n    public #PrefabName#(UnityEngine.GameObject
+    transform) : base(transform) { }\n    \n    public virtual #PrefabName# Binder()\r\n   
+    {\r\n        if (this.target == null) return this;;\r\n#ComponentBinder#\n       
+    return this;\n    }\r\n}"
+  bindComponentField: "    private #ComponentType# #FieldName#;\n    public #ComponentType#
+    #PropertyName# => #FieldName#;"
+  BindFlag: "var #FlagName# = target.transform.Find(\"#ComponentPath#\");\n\t\tif
+    (null != #FlagName#) \n\t\t{"
+  bindComponent: '#FieldName# = #FlagName#.GetComponent<#ComponentType#>();'
+  bindItem: '#FieldName# = new #PrefabName#(#FlagName#.gameObject).Binder();'
+  viewTemplate: "using Cysharp.Threading.Tasks;\r\n\r\n[ViewInfo(null)]\npublic class
+    #PrefabName# : BasePresenter\r\n{\r\n    private #PrefabName#View View => (#PrefabName#View)
+    this.view;\r\n\r}"
