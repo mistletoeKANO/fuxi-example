@@ -6,14 +6,8 @@ using UnityEngine;
 // ReSharper disable once CheckNamespace
 public class AssetManager : Singleton<AssetManager>
 {
-    private const string RootPath = "Assets/Example/BundleResource/";
     private readonly Dictionary<string, FxAsset> m_Cache = new Dictionary<string, FxAsset>();
     private readonly List<string> m_KeepOnSwitchScene = new List<string>();
-
-    public string GetAssetPath(string path)
-    {
-        return $"{RootPath}{path}";
-    }
 
     /// <summary>
     /// 异步加载
@@ -25,7 +19,6 @@ public class AssetManager : Singleton<AssetManager>
     public async UniTask<T> LoadAssetAsync<T>(string path, bool destroyOnSwitchScene = true)
         where T : UnityEngine.Object
     {
-        path = $"{RootPath}{path}";
         if (!this.m_Cache.TryGetValue(path, out var fxAsset))
         {
             fxAsset = await FxAsset.LoadAsync<T>(path);
@@ -46,7 +39,6 @@ public class AssetManager : Singleton<AssetManager>
     /// <returns></returns>
     public T LoadAsset<T>(string path, bool destroyOnSwitchScene = true) where T : UnityEngine.Object
     {
-        path = $"{RootPath}{path}";
         if (!this.m_Cache.TryGetValue(path, out var fxAsset))
         {
             fxAsset = FxAsset.Load<T>(path);

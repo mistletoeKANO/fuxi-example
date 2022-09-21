@@ -8,7 +8,7 @@ using UnityEngine.Rendering.Universal;
 // ReSharper disable once CheckNamespace
 public class GameSceneManager : MonoSingleton<GameSceneManager>
 {
-    private const string LoadingScenePath = "Assets/Example/BundleResource/Scenes/Loading.unity";
+    private const string LoadingScenePath = "Scenes/Loading.unity";
     private BaseScene m_Current;
     private bool m_IsLoading = false;
 

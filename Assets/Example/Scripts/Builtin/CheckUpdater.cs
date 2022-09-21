@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckUpdater
 {
-    private const string UIFormPath = "Assets/Example/BundleResource/Builtin/UICheckUpdateForm.prefab";
+    private const string UIFormPath = "Builtin/UICheckUpdateForm.prefab";
     private UICheckUpdateForm m_CheckForm;
 
     public async Task Start()

@@ -52,15 +52,6 @@ public class ComponentInfo
         typeof(CanvasRenderer),
     };
 
-    /// <summary>
-    /// 禁止组件列表
-    /// 不可以添加到预制体，如果被添加到预制体，会在组件面板显示为红色警告，且无法勾选启用。
-    /// </summary>
-    public static readonly List<Type> prohibitComponents = new List<Type>
-    {
-        typeof(EventTriggerListener),
-    };
-
     [SerializeField]
     [HideInInspector]
     string typeName;
@@ -115,7 +106,7 @@ public class ComponentInfo
     /// <returns></returns>
     public bool IsProhibit()
     {
-        return null == type || prohibitComponents.Contains(type);
+        return null == type;
     }
 
 #if UNITY_EDITOR

@@ -8,7 +8,7 @@ using UnityEngine.Rendering.Universal;
 
 public class UIManager : MonoSingleton<UIManager>
 {
-    private readonly string m_UIRootPath = "Assets/Example/BundleResource/Builtin/UIRoot.prefab";
+    private readonly string m_UIRootPath = "Builtin/UIRoot.prefab";
     private readonly UIFormLayer[] m_FormLayers = new UIFormLayer[6];
     private Camera m_UICamera;
     private EventSystem m_UIEventSystem;

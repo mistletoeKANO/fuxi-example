@@ -2,7 +2,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 
-[Path("Assets/Example/BundleResource/Scenes/Login.unity")]
+[Path("Scenes/Login.unity")]
 public class LoginScene : BaseScene
 {
     public override UniTask LoadCompleted()
