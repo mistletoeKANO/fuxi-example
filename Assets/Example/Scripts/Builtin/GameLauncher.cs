@@ -24,7 +24,7 @@ namespace Builtin
         
         private void InitFxLOGInformation()
         {
-            FuXi.FX_LOG_CONTROL.LogLevel = FX_LOG_TYPE.ERROR;
+            //FuXi.FX_LOG_CONTROL.LogLevel = FX_LOG_TYPE.ERROR;
         }
 
         private async void Start()
