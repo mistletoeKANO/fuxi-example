@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b6c21043e1445fbb62f910f69c62d4, type: 3}
   m_Name: FuXi Asset Android
   m_EditorClassIdentifier: 
-  bundleVersion: 8
+  bundleVersion: 10
   playerVersion: 1.0
   buildAssetBundleOptions: 256
   fx_Objects:
@@ -93,7 +93,7 @@ MonoBehaviour:
   FxPlatform: 1
   EncryptType: FuXi.FxEncryptOffset
   OpenBreakResume: 0
-  CopyAllBundle2Player: 1
+  CopyAllBundle2Player: 0
   ExcludeExtensions:
   - .spriteatlas
   BuiltinPackages:

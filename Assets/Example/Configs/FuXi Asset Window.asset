@@ -28,7 +28,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b6c21043e1445fbb62f910f69c62d4, type: 3}
   m_Name: FuXi Asset Window
   m_EditorClassIdentifier: 
-  bundleVersion: 5
+  bundleVersion: 6
   playerVersion: 1.0
   buildAssetBundleOptions: 256
   fx_Objects:
@@ -65,7 +65,7 @@ MonoBehaviour:
   FxPlatform: 0
   EncryptType: FuXi.FxEncryptOffset
   OpenBreakResume: 0
-  CopyAllBundle2Player: 1
+  CopyAllBundle2Player: 0
   ExcludeExtensions:
   - .spriteatlas
   BuiltinPackages:
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: Builtin
   m_EditorClassIdentifier: 
   PackageObjects:
-  - {fileID: 102900000, guid: 6ed16517b57237646a6ec7484da39225, type: 3}
+  - {fileID: 102900000, guid: bdb4a8b759773f44f953c66596b2bc42, type: 3}
 --- !u!114 &7638142194550657340
 MonoBehaviour:
   m_ObjectHideFlags: 0

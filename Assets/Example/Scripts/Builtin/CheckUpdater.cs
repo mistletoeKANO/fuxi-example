@@ -6,17 +6,18 @@ public class CheckUpdater
 {
     private const string UIFormPath = "Builtin/UICheckUpdateForm.prefab";
     private UICheckUpdateForm m_CheckForm;
+    private FxAsset formAsset;
 
     public async Task Start()
     {
         if (FuXiManager.RuntimeMode != RuntimeMode.Runtime) return;
-        FxAsset fxAsset = await FxAsset.LoadAsync<GameObject>(UIFormPath);
-        if (fxAsset.asset == null)
+        this.formAsset = await FxAsset.LoadAsync<GameObject>(UIFormPath);
+        if (this.formAsset.asset == null)
         {
             Debugger.LogError("启动更新页面加载失败!");
             return;
         }
-        var form = (GameObject) UnityEngine.Object.Instantiate(fxAsset.asset);
+        var form = (GameObject) UnityEngine.Object.Instantiate(this.formAsset.asset);
         this.m_CheckForm = form.GetComponent<UICheckUpdateForm>();
         await this.CheckUpdate();
     }
@@ -33,12 +34,14 @@ public class CheckUpdater
         {
             this.m_CheckForm.UpdateProgress(f);
         });
-        if (downloadInfo.DownloadSize == 0) return;
-        this.m_CheckForm.UpdateDesc("正在下载更新内容.");
-        await FuXiManager.FxCheckDownload(downloadInfo, f =>
+        if (downloadInfo.DownloadSize > 0)
         {
-            this.m_CheckForm.UpdateProgress(f.progress);
-        });
-        Object.DestroyImmediate(this.m_CheckForm);
+            this.m_CheckForm.UpdateDesc("正在下载更新内容.");
+            await FuXiManager.FxCheckDownload(downloadInfo, f =>
+            {
+                this.m_CheckForm.UpdateProgress(f.progress);
+            });
+        }
+        this.formAsset.Release();
     }
 }

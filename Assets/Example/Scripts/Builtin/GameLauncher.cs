@@ -8,10 +8,12 @@ namespace Builtin
     {
         public RuntimeMode RuntimeMode;
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_STANDALONE_WIN
         private string VersionFile = "FuXiAssetWindow";
+        private string DownloadPlatform = "Windows";
 #else
         private string VersionFile = "FuXiAssetAndroid";
+        private string DownloadPlatform = "Android";
 #endif
 
         private void Awake()
@@ -31,7 +33,7 @@ namespace Builtin
         {
             InitFxLOGInformation();
             
-            await FuXiManager.FxLauncherAsync(VersionFile, "http://192.168.1.2/Windows/", RuntimeMode, typeof(FxEncryptOffset));
+            await FuXiManager.FxLauncherAsync(VersionFile, $"http://192.168.1.13/{DownloadPlatform}/", RuntimeMode);
 
             await new CheckUpdater().Start();
             
