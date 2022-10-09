@@ -42,7 +42,7 @@ namespace FuXi
             switch (Application.platform)
             {
                 case RuntimePlatform.Android:
-                    return strPath;
+                    return $"jar:file://{strPath}";
                 case RuntimePlatform.WindowsPlayer:
                 case RuntimePlatform.WindowsEditor:
                     return $"file:///{strPath}";
