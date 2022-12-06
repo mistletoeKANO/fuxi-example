@@ -13,24 +13,24 @@ public class LoginScene : BaseScene
 
     private async UniTask AsyncOperation(Action<float, string> action)
     {
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
         action?.Invoke(0.1f,"");
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
         action?.Invoke(0.2f,"");
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
         action?.Invoke(0.3f,"");
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
         action?.Invoke(0.4f,"");
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
         action?.Invoke(0.5f,"");
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
         action?.Invoke(0.6f,"");
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
         action?.Invoke(0.7f,"");
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
         action?.Invoke(0.8f,"");
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
         action?.Invoke(0.9f,"");
-        await UniTask.DelayFrame(100);
+        await UniTask.DelayFrame(10);
     }
 }
