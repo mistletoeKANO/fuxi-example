@@ -8,8 +8,8 @@ public class ExportLuaFileProcess : FuXi.Editor.IBuildBundlePreprocess
         Debug.Log("ExportLuaFileProcess pre");
     }
 
-    public void BuildBundlePost()
+    public void BuildBundlePost(System.Collections.Generic.List<string> diffFiles)
     {
-        Debug.Log("ExportLuaFileProcess post");
+        Debug.Log($"ExportLuaFileProcess post: {diffFiles.Count}");
     }
 }
