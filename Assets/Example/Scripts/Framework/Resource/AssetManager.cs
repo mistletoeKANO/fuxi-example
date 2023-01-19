@@ -21,10 +21,10 @@ public class AssetManager : Singleton<AssetManager>
     {
         if (!this.m_Cache.TryGetValue(path, out var fxAsset))
         {
-            fxAsset = await FxAsset.LoadAsync<T>(path);
+            fxAsset = FxAsset.LoadAsyncCo<T>(path);
             this.m_Cache.Add(path, fxAsset);
         }
-
+        await fxAsset;
         if (!destroyOnSwitchScene && !this.m_KeepOnSwitchScene.Contains(path))
             this.m_KeepOnSwitchScene.Add(path);
         return (T) fxAsset.asset;
@@ -122,7 +122,11 @@ public class AssetManager : Singleton<AssetManager>
         if (forceClean)
         {
             foreach (var asset in m_Cache)
+            {
+                if (!asset.Value.isDone)
+                    continue;
                 asset.Value.Release();
+            }
             this.m_Cache.Clear();
             this.m_KeepOnSwitchScene.Clear();
             return;
@@ -132,6 +136,8 @@ public class AssetManager : Singleton<AssetManager>
         foreach (var asset in m_Cache)
         {
             if (m_KeepOnSwitchScene.Contains(asset.Key)) continue;
+            if (!asset.Value.isDone)
+                continue;
             asset.Value.Release();
             removed.Add(asset.Key);
         }
