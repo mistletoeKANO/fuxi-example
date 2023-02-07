@@ -13,9 +13,7 @@ namespace FuXi.Editor
         FxEditorAsset(string path, Type type, bool loadImmediate, Action<FxAsset> callback) : base(path, type, loadImmediate, callback) { }
         protected override FTask<FxAsset> Execute()
         {
-#if UNITY_EDITOR
             this.stackInfo = StackTraceUtility.ExtractStackTrace();
-#endif
             var tcs = FTask<FxAsset>.Create(true);
             this.m_TcsList.Add(tcs);
             if (FuXiManager.ManifestVC.TryGetAssetManifest(this.m_FilePath, out var _))
