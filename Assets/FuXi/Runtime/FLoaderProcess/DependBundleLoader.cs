@@ -38,6 +38,22 @@ namespace FuXi
             this.isLoading = !immediate;
         }
 
+        internal void SwitchToSync()
+        {
+            if (this.isDone)
+                return;
+            if (!this.m_BundleRequest.isDone)
+            {
+                this.m_BundleRequest.assetBundle.Unload(true);
+                if (assetBundle != null)
+                    assetBundle.Unload(true);
+                this.LoadBundleInternal();
+            }
+            if (assetBundle == null)
+                this.assetBundle = this.m_BundleRequest.assetBundle;
+            this.isDone = true;
+        }
+
         internal void Update()
         {
             if (this.isDone) return;

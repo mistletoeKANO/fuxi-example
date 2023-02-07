@@ -54,6 +54,13 @@ namespace FuXi
                 else
                     this.m_Completed = callback;
             }
+            //异步转同步
+            if (!this.isDone && loadImmediate)
+            {
+                this.m_BundleLoader.SwitchToSync();
+                if (this.m_BundleLoader.mainLoader.assetBundle != null)
+                    this.asset = this.m_BundleLoader.mainLoader.assetBundle.LoadAsset(this.m_FilePath, this.m_Type);
+            }
             if (this.isDone)
                 this.LoadFinished();
             return tcs;

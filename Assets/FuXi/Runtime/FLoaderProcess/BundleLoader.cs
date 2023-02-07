@@ -76,6 +76,25 @@ namespace FuXi
             this.isDone = immediate;
         }
 
+        internal void SwitchToSync()
+        {
+            if (this.m_Step == LoadStep.CheckDownload)
+            {
+                FxDebug.LogError("Bundle is in downloading, cant load with sync.");
+                return;
+            }
+            if (this.m_Step == LoadStep.LoadBundle)
+            {
+                foreach (var loader in m_LoaderList)
+                {
+                    if (loader.isDone) 
+                        continue;
+                    loader.SwitchToSync();
+                }
+            }
+            this.isDone = true;
+        }
+
         internal void Update()
         {
             if (this.isDone) return;
